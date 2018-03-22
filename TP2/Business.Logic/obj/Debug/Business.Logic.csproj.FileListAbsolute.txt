@@ -1,0 +1,56 @@
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\DavidC\Desktop\NET 2016\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\bin\Debug\Data.Database.dll
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+D:\Caro\Facu\Electivas\NET\TP2 - Lab3 fin\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Data.Database.dll
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+D:\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 2016\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Util.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Business.Logic\bin\Debug\Util.pdb

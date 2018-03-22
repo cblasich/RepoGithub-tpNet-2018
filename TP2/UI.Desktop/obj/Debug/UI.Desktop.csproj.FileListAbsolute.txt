@@ -1,0 +1,29 @@
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Util.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.CursoDesktop.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.Cursos.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.EspecialidadDesktop.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.Especialidades.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.ModuloDesktop.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.Modulos.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.PersonaDesktop.resources
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.Personas.resources
+C:\Users\Caro\Downloads\TP2 C&D 2016\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Users\Caro\Downloads\TP2 C&D 2016\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Users\Caro\Downloads\TP2 C&D 2016\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
