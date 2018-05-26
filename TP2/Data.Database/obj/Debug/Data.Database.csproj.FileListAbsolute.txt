@@ -42,3 +42,12 @@ C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Data.Database\obj\Debug\Dat
 C:\Users\David\Documents\GitHub\TP2-NET-CyD-2016\TP2\Data.Database\obj\Debug\Data.Database.pdb
 C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Data.Database\bin\Debug\Util.dll
 C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\Data.Database\bin\Debug\Util.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Debug\Data.Database.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Debug\Data.Database.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Debug\Business.Entities.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Debug\Util.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Debug\Business.Entities.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Debug\Util.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\obj\Debug\Data.Database.csprojResolveAssemblyReference.cache
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\obj\Debug\Data.Database.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\obj\Debug\Data.Database.pdb

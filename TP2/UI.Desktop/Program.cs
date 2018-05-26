@@ -17,10 +17,12 @@ namespace UI.Desktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Usuarios());
-            Application.Run(new Personas());
+            //Application.Run(new Personas());
             //Application.Run(new Especialidades());
             //Application.Run(new Modulos());
             //Application.Run(new Cursos());
+            Application.Run(new Materias());
+            //Application.Run(new MateriaDesktop());
         }
     }
 }
