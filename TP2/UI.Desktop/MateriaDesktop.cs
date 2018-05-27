@@ -29,12 +29,17 @@ namespace UI.Desktop
             set { _materiaActual = value; }
         }
 
+        public void CargarCombo()
+        {
+            cbxPlan.DataSource = new PlanLogic().GetAll();
+        }
         public MateriaDesktop(ModoForm modo):this () 
         //este constructor servirá para las altas
         {
             this.Modo = modo;
             this.MateriaActual = new Materia();
-            
+            this.CargarCombo();
+                       
         }
 
         /*public MateriaDesktop(int id, ModoForm modo):this()
@@ -75,7 +80,7 @@ namespace UI.Desktop
                 MateriaActual.DescMateria = this.txtDescripcion.Text.Trim();
                 MateriaActual.HorasSemanales = Convert.ToInt32(this.txtHorasSemanales.Text.Trim());
                 MateriaActual.HorasTotales = Convert.ToInt32(this.txtHorasTotales.Text.Trim());
-                //falta definir lo de idplan, que esta en un combobox
+                MateriaActual.IdPlan = (int)this.cbxPlan.SelectedValue;
            
                 }
             

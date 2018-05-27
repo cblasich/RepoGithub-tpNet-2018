@@ -176,7 +176,7 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.DescMateria;
                 cmdInsert.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HorasSemanales;
                 cmdInsert.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HorasTotales;
-                cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = 1; //hardcodeado, después quitar!
+                cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
                 materia.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
                 //Asi se obtiene el ID que asigno la BD automaticamente y ejecuta toda la consulta.
                 

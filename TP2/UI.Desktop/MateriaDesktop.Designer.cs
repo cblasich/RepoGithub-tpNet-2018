@@ -152,11 +152,13 @@
             // 
             // cbxPlan
             // 
+            this.cbxPlan.DisplayMember = "DescPlan";
             this.cbxPlan.FormattingEnabled = true;
             this.cbxPlan.Location = new System.Drawing.Point(637, 3);
             this.cbxPlan.Name = "cbxPlan";
             this.cbxPlan.Size = new System.Drawing.Size(121, 21);
-            this.cbxPlan.TabIndex = 9;
+            this.cbxPlan.TabIndex = 2;
+            this.cbxPlan.ValueMember = "Id";
             this.cbxPlan.SelectedIndexChanged += new System.EventHandler(this.cbxPlan_SelectedIndexChanged);
             // 
             // btnAceptar
