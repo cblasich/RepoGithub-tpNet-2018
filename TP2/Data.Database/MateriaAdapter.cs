@@ -168,17 +168,18 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdInsert = new SqlCommand("INSERT INTO materias(nombre_materia,clave,habilitado,id_persona) " +
-                "VALUES(@nombre_materia, @clave, @habilitado, @id_persona) " +
+                SqlCommand cmdInsert = new SqlCommand("INSERT INTO materias(desc_materia,hs_semanales,hs_totales,id_plan) " +
+                "VALUES(@desc_materia, @hs_semanales, @hs_totales, @id_plan) " +
                 "select @@identity", //linea para recuperar el ID que asigno el Sql automaticamente
                 SqlConn);
 
-                cmdInsert.Parameters.Add("@id_materia", SqlDbType.Int).Value = materia.Id;
                 cmdInsert.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.DescMateria;
                 cmdInsert.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HorasSemanales;
                 cmdInsert.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HorasTotales;
+                cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = 1; //hardcodeado, después quitar!
                 materia.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
-                //Asi se obtiene el ID que asigno la BD automaticamente.
+                //Asi se obtiene el ID que asigno la BD automaticamente y ejecuta toda la consulta.
+                
             }
             catch (Exception Ex)
             {

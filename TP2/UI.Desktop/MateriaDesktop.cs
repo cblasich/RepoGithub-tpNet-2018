@@ -18,6 +18,7 @@ namespace UI.Desktop
         public MateriaDesktop()
         {
             InitializeComponent();
+       
         }
 
         private Materia _materiaActual;
@@ -36,7 +37,7 @@ namespace UI.Desktop
             
         }
 
-        public MateriaDesktop(int id, ModoForm modo):this()
+        /*public MateriaDesktop(int id, ModoForm modo):this()
         {
             this.Modo = modo;
             MateriaLogic materiaLogic = new MateriaLogic();
@@ -51,7 +52,7 @@ namespace UI.Desktop
                     //Cargo la grilla de permisos
                     dgvPermisos.AutoGenerateColumns = false;
                     dgvPermisos.DataSource = new ModuloMateriaLogic().GetAllTabla(this.Materia.Id);
-                }*/
+                }
 
                 //Copio datos de la entidad al formulario
                 this.MapearDeDatos();
@@ -61,7 +62,7 @@ namespace UI.Desktop
                 this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+        }*/
 
         public override void MapearADatos()
         /* se va a utilizar para pasar la información de los controles
