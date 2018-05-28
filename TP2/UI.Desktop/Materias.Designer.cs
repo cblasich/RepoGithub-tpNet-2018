@@ -32,17 +32,17 @@
             this.tscMateria = new System.Windows.Forms.ToolStripContainer();
             this.tlMateria = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMateria = new System.Windows.Forms.DataGridView();
+            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsMateria = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscMateria.ContentPanel.SuspendLayout();
             this.tscMateria.TopToolStripPanel.SuspendLayout();
             this.tscMateria.SuspendLayout();
@@ -102,6 +102,46 @@
             this.dgvMateria.Size = new System.Drawing.Size(654, 186);
             this.dgvMateria.TabIndex = 0;
             // 
+            // idMateria
+            // 
+            this.idMateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idMateria.DataPropertyName = "Id";
+            this.idMateria.HeaderText = "ID";
+            this.idMateria.Name = "idMateria";
+            this.idMateria.ReadOnly = true;
+            // 
+            // descMateria
+            // 
+            this.descMateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descMateria.DataPropertyName = "DescMateria";
+            this.descMateria.HeaderText = "Descripcion";
+            this.descMateria.Name = "descMateria";
+            this.descMateria.ReadOnly = true;
+            // 
+            // hsSemanales
+            // 
+            this.hsSemanales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hsSemanales.DataPropertyName = "HorasSemanales";
+            this.hsSemanales.HeaderText = "Horas Semanales";
+            this.hsSemanales.Name = "hsSemanales";
+            this.hsSemanales.ReadOnly = true;
+            // 
+            // hsTotales
+            // 
+            this.hsTotales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hsTotales.DataPropertyName = "HorasTotales";
+            this.hsTotales.HeaderText = "Horas Totales";
+            this.hsTotales.Name = "hsTotales";
+            this.hsTotales.ReadOnly = true;
+            // 
+            // idPlan
+            // 
+            this.idPlan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idPlan.DataPropertyName = "IdPlan";
+            this.idPlan.HeaderText = "ID Plan";
+            this.idPlan.Name = "idPlan";
+            this.idPlan.ReadOnly = true;
+            // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -153,6 +193,7 @@
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(23, 22);
             this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbEliminar
             // 
@@ -162,46 +203,6 @@
             this.tsbEliminar.Name = "tsbEliminar";
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
-            // 
-            // idMateria
-            // 
-            this.idMateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idMateria.DataPropertyName = "Id";
-            this.idMateria.HeaderText = "ID";
-            this.idMateria.Name = "idMateria";
-            this.idMateria.ReadOnly = true;
-            // 
-            // descMateria
-            // 
-            this.descMateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descMateria.DataPropertyName = "DescMateria";
-            this.descMateria.HeaderText = "Descripcion";
-            this.descMateria.Name = "descMateria";
-            this.descMateria.ReadOnly = true;
-            // 
-            // hsSemanales
-            // 
-            this.hsSemanales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.hsSemanales.DataPropertyName = "HorasSemanales";
-            this.hsSemanales.HeaderText = "Horas Semanales";
-            this.hsSemanales.Name = "hsSemanales";
-            this.hsSemanales.ReadOnly = true;
-            // 
-            // hsTotales
-            // 
-            this.hsTotales.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.hsTotales.DataPropertyName = "HorasTotales";
-            this.hsTotales.HeaderText = "Horas Totales";
-            this.hsTotales.Name = "hsTotales";
-            this.hsTotales.ReadOnly = true;
-            // 
-            // idPlan
-            // 
-            this.idPlan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idPlan.DataPropertyName = "IdPlan";
-            this.idPlan.HeaderText = "ID Plan";
-            this.idPlan.Name = "idPlan";
-            this.idPlan.ReadOnly = true;
             // 
             // Materias
             // 

@@ -22,7 +22,7 @@ namespace UI.Desktop
             //Application.Run(new Modulos());
             //Application.Run(new Cursos());
             Application.Run(new Materias());
-            //Application.Run(new MateriaDesktop());
+            //Application.Run(new MateriaDesktop(20,ApplicationForm.ModoForm.Modificacion));
         }
     }
 }

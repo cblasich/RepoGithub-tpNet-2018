@@ -48,6 +48,16 @@ namespace UI.Desktop
             this.Listar();
         }
 
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvMateria.SelectedRows.Count == 1)
+            {
+                int ID = ((Business.Entities.Materia)this.dgvMateria.SelectedRows[0].DataBoundItem).Id;
+                MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                formMateria.ShowDialog();
+            }
+        }
+
       
     }
 }

@@ -33,6 +33,7 @@ namespace UI.Desktop
         {
             cbxPlan.DataSource = new PlanLogic().GetAll();
         }
+
         public MateriaDesktop(ModoForm modo):this () 
         //este constructor servirá para las altas
         {
@@ -42,32 +43,27 @@ namespace UI.Desktop
                        
         }
 
-        /*public MateriaDesktop(int id, ModoForm modo):this()
+        public MateriaDesktop(int id, ModoForm modo)
+            : this()
+        //este constructor servirá para las modificaciones
         {
             this.Modo = modo;
             MateriaLogic materiaLogic = new MateriaLogic();
+
             try
             {
                 //Recupero la materia
                 this.MateriaActual = materiaLogic.GetOne(id);
-
-                /*Enumeradores.TiposPersonas tipoPersona = new PersonaLogic().GetOnePorPersona(MateriaActual.IdPersona).TipoPersona;
-                if (tipoPersona == Enumeradores.TiposPersonas.Administrador)
-                {
-                    //Cargo la grilla de permisos
-                    dgvPermisos.AutoGenerateColumns = false;
-                    dgvPermisos.DataSource = new ModuloMateriaLogic().GetAllTabla(this.Materia.Id);
-                }
-
-                //Copio datos de la entidad al formulario
                 this.MapearDeDatos();
+                this.GuardarCambios();
             }
+
             catch (Exception e)
             {
                 this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
-        }*/
 
         public override void MapearADatos()
         /* se va a utilizar para pasar la información de los controles
@@ -81,50 +77,71 @@ namespace UI.Desktop
                 MateriaActual.HorasSemanales = Convert.ToInt32(this.txtHorasSemanales.Text.Trim());
                 MateriaActual.HorasTotales = Convert.ToInt32(this.txtHorasTotales.Text.Trim());
                 MateriaActual.IdPlan = (int)this.cbxPlan.SelectedValue;
-           
+                           
                 }
             
 
             if (this.Modo == ModoForm.Modificacion)
             {
-                this.txtDescripcion.Enabled = false;
-                this.txtHorasSemanales.Enabled = false;
-                this.txtHorasTotales.Enabled = false;
-                this.txtIdMateria.Enabled = false;
-                this.cbxPlan.Enabled = false;
+
+                MateriaActual.State = BusinessEntity.States.Modified;
+                MateriaActual.DescMateria = this.txtDescripcion.Text.Trim();
+                MateriaActual.HorasSemanales = Convert.ToInt32(this.txtHorasSemanales.Text.Trim());
+                MateriaActual.HorasTotales = Convert.ToInt32(this.txtHorasTotales.Text.Trim());
+                MateriaActual.IdPlan = (int)this.cbxPlan.SelectedValue;
                 
             }
 
-            /*if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
-            {
-                int legajo = Convert.ToInt32(this.txtLegajo.Text.Trim());
-
-                try
-                {
-                    MateriaActual.IdPersona = new PersonaLogic().GetOnePorLegajo(legajo).Id;
-                    MateriaActual.Habilitado = this.chkHabilitado.Checked;
-                    MateriaActual.NombreMateria = this.txtMateria.Text.Trim();
-                    MateriaActual.Clave = this.txtClave.Text.Trim();
-                    //COMPLETAR CON LOS DATOS DE LA GRILLA. ENVIARLOS A LA ENTIDAD 
-                    //USUARIO O PERSONA, SEGUN CORRESPONDAN!!!
-                }
-                catch (Exception e)
-                {
-                    this.Notificar("Se produjo un error.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                if (this.Modo == ModoForm.Modificacion)
-                {
-                    MateriaActual.Id = Convert.ToInt16(this.txtId.Text);
-                    MateriaActual.State = BusinessEntity.States.Modified;
-                }
-            }*/
-
+            
             if (this.Modo == ModoForm.Baja)
             {
                 MateriaActual.State = BusinessEntity.States.Deleted;
             }
         }
+
+        public override void MapearDeDatos()        
+        {
+            
+            try
+            {
+                //Copio datos al formulario
+                this.txtIdMateria.Text = this.MateriaActual.Id.ToString();
+                this.txtDescripcion.Text = this.MateriaActual.DescMateria.ToString();
+                this.txtHorasSemanales.Text = this.MateriaActual.HorasSemanales.ToString();
+                this.txtHorasTotales.Text = this.MateriaActual.HorasTotales.ToString();
+                this.CargarCombo();
+                this.cbxPlan.SelectedValue = this.MateriaActual.IdPlan;
+            }
+            catch (Exception ex)
+            {
+                this.Notificar("Se produjo un error.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //Para cambiar textos de ventanas y botones
+            switch (this.Modo)
+            {
+                case ModoForm.Alta:
+                    this.Text = "Alta de Usuario";
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+
+                case ModoForm.Modificacion:
+                    this.Text = "Modificación de Usuario";
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+
+                case ModoForm.Baja:
+                    this.Text = "Baja de Usuario";
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+
+                case ModoForm.Consulta:
+                    this.Text = "Consulta de Usuario";
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+            }
+        }
+
 
         public override void GuardarCambios()
         /* método que se encargará de invocar al método correspondiente 

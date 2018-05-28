@@ -138,11 +138,12 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE materias SET nombre_materia = @nombre_materia, clave = @clave, " +
-                "habilitado = @habilitado, id_persona = @id_persona " +
+                SqlCommand cmdSave = new SqlCommand("UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales, " +
+                "hs_totales = @hs_totales, id_plan = @id_plan " +
                 "WHERE id_materia = @id", SqlConn);
 
-       
+
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.Id;
                 cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.DescMateria;
                 cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HorasSemanales;
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HorasTotales;
