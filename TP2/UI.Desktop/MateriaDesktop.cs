@@ -45,7 +45,7 @@ namespace UI.Desktop
 
         public MateriaDesktop(int id, ModoForm modo)
             : this()
-        //este constructor servirá para las modificaciones
+        //este constructor servirá para las modificaciones y bajas
         {
             this.Modo = modo;
             MateriaLogic materiaLogic = new MateriaLogic();
@@ -55,7 +55,7 @@ namespace UI.Desktop
                 //Recupero la materia
                 this.MateriaActual = materiaLogic.GetOne(id);
                 this.MapearDeDatos();
-                this.GuardarCambios();
+                               
             }
 
             catch (Exception e)
@@ -104,13 +104,25 @@ namespace UI.Desktop
             
             try
             {
-                //Copio datos al formulario
-                this.txtIdMateria.Text = this.MateriaActual.Id.ToString();
-                this.txtDescripcion.Text = this.MateriaActual.DescMateria.ToString();
-                this.txtHorasSemanales.Text = this.MateriaActual.HorasSemanales.ToString();
-                this.txtHorasTotales.Text = this.MateriaActual.HorasTotales.ToString();
-                this.CargarCombo();
-                this.cbxPlan.SelectedValue = this.MateriaActual.IdPlan;
+                if (this.Modo == ModoForm.Modificacion || this.Modo == ModoForm.Baja)
+                {
+                    //Copio datos al formulario
+                    this.txtIdMateria.Text = this.MateriaActual.Id.ToString();
+                    this.txtDescripcion.Text = this.MateriaActual.DescMateria.ToString();
+                    this.txtHorasSemanales.Text = this.MateriaActual.HorasSemanales.ToString();
+                    this.txtHorasTotales.Text = this.MateriaActual.HorasTotales.ToString();
+                    this.CargarCombo();
+                    this.cbxPlan.SelectedValue = this.MateriaActual.IdPlan;
+                }
+
+                if (this.Modo == ModoForm.Baja)
+                {
+                    this.txtIdMateria.Enabled = false;
+                    this.txtDescripcion.Enabled = false;
+                    this.txtHorasSemanales.Enabled = false;
+                    this.txtHorasTotales.Enabled = false;
+                    this.cbxPlan.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -163,6 +175,22 @@ namespace UI.Desktop
                     this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            if (this.Modo == ModoForm.Baja)
+            {
+                try
+                {
+                    //Copio datos del formulario al usuario
+                    this.MapearADatos();
+                    //Guardo el usuario y la persona
+                    matLogic.Delete(this.MateriaActual.Id);
+                }
+                catch (Exception e)
+                {
+                    this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
            
@@ -179,6 +207,11 @@ namespace UI.Desktop
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.GuardarCambios();
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
