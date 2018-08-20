@@ -27,3 +27,31 @@ C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Desktop\obj\
 C:\Users\Caro\Downloads\TP2 C&D 2016\TP2 C&D 2016\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
 C:\Users\Caro\Downloads\TP2 C&D 2016\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
 C:\Users\Caro\Downloads\TP2 C&D 2016\TP2 C&D 2016\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Util.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Util.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.CursoDesktop.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Cursos.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.EspecialidadDesktop.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Especialidades.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.ModuloDesktop.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Modulos.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.PersonaDesktop.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Personas.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Materias.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.MateriaDesktop.resources
