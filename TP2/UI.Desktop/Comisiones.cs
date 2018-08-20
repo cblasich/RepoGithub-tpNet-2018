@@ -40,5 +40,23 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            ComisionDesktop formComision = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            formComision.ShowDialog();
+            this.Listar();
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvComisiones.SelectedRows.Count == 1)
+            {
+                int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+                ComisionDesktop formComision = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                formComision.ShowDialog();
+                this.Listar();
+            }
+        }
     }
 }

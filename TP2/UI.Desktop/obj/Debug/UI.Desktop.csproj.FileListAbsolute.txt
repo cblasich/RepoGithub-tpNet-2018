@@ -56,3 +56,4 @@ D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.Gener
 D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Materias.resources
 D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.MateriaDesktop.resources
 D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Comisiones.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.ComisionDesktop.resources
