@@ -21,7 +21,8 @@ namespace UI.Desktop
             //Application.Run(new Especialidades());
             //Application.Run(new Modulos());
             //Application.Run(new Cursos());
-            Application.Run(new Materias());
+            //Application.Run(new Materias());
+            Application.Run(new Comisiones());
             //Application.Run(new MateriaDesktop(20,ApplicationForm.ModoForm.Modificacion));
         }
     }

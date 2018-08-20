@@ -55,3 +55,4 @@ D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.R
 D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
 D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Materias.resources
 D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.MateriaDesktop.resources
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Desktop\obj\Debug\UI.Desktop.Comisiones.resources
