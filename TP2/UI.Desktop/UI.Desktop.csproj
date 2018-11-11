@@ -44,23 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MateriaDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MateriaDesktop.Designer.cs">
-      <DependentUpon>MateriaDesktop.cs</DependentUpon>
-    </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materias.cs">
+    <Compile Include="ComisionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materias.Designer.cs">
-      <DependentUpon>Materias.cs</DependentUpon>
+    <Compile Include="ComisionDesktop.Designer.cs">
+      <DependentUpon>ComisionDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones.Designer.cs">
+      <DependentUpon>Comisiones.cs</DependentUpon>
     </Compile>
     <Compile Include="CursoDesktop.cs">
       <SubType>Form</SubType>
@@ -98,6 +98,18 @@
     <Compile Include="Modulos.Designer.cs">
       <DependentUpon>Modulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModulosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosUsuarios.Designer.cs">
+      <DependentUpon>ModulosUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloUsuarioDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloUsuarioDesktop.Designer.cs">
+      <DependentUpon>ModuloUsuarioDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +136,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MateriaDesktop.resx">
-      <DependentUpon>MateriaDesktop.cs</DependentUpon>
+    <EmbeddedResource Include="ComisionDesktop.resx">
+      <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materias.resx">
-      <DependentUpon>Materias.cs</DependentUpon>
+    <EmbeddedResource Include="Comisiones.resx">
+      <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CursoDesktop.resx">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
@@ -147,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos.resx">
       <DependentUpon>Modulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosUsuarios.resx">
+      <DependentUpon>ModulosUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloUsuarioDesktop.resx">
+      <DependentUpon>ModuloUsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonaDesktop.resx">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>

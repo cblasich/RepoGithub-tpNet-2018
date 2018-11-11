@@ -97,7 +97,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar datos de la curso.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos del curso.", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -122,9 +122,14 @@ namespace Data.Database
                 //Ejecutamos la sentencia SQL
                 cmdDelete.ExecuteNonQuery();
             }
+            catch (SqlException sqlEx)
+            {
+                Exception ExcepcionManejada = new Exception("El curso indicado tiene docentes_cursos vinculados. Primero debe eliminarlos.", sqlEx);
+                throw ExcepcionManejada;
+            }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al eliminar curso.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al intentar eliminar curso.", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -138,16 +143,20 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET cupo = @cupo " +
+                SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET id_materia = @id_materia, id_comision = @id_comision, " +
+                "anio_calendario = @anio_calendario, cupo = @cupo " +
                 "WHERE id_curso = @id", SqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.Id;
+                cmdSave.Parameters.Add("id_materia", SqlDbType.Int).Value = curso.IdMateria;
+                cmdSave.Parameters.Add("id_comision", SqlDbType.Int).Value = curso.IdComision;
+                cmdSave.Parameters.Add("anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.VarChar, 50).Value = curso.Cupo;
                 cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al modificar datos de la curso.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al intentar modificar datos del curso.", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -155,25 +164,27 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-
 
         protected void Insert(Curso curso)
         {
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO cursos(cupo) " +
-                "VALUES(@cupo) " +
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO cursos(id_materia, id_comision, anio_calendario, cupo) " +
+                "VALUES(@id_materia, @id_comision, @anio_calendario, @cupo) " +
                 "select @@identity", //linea para recuperar el ID que asigno el Sql automaticamente
                 SqlConn);
 
-                cmdSave.Parameters.Add("@cupo", SqlDbType.VarChar, 50).Value = curso.Cupo;
+                cmdSave.Parameters.Add("id_materia", SqlDbType.Int).Value = curso.IdMateria;
+                cmdSave.Parameters.Add("id_comision", SqlDbType.Int).Value = curso.IdComision;
+                cmdSave.Parameters.Add("anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
+                cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
                 curso.Id = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //Asi se obtiene el ID que asigno la BD automaticamente.
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al modificar datos de la curso.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al intentar crear curso.", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -181,7 +192,6 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-
 
         public void Save(Curso curso)
         {

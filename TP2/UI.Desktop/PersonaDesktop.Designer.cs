@@ -47,10 +47,10 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtIdPlan = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbTiposPersona = new System.Windows.Forms.ComboBox();
+            this.cmbPlanes = new System.Windows.Forms.ComboBox();
             this.tlPersonaDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,10 +79,10 @@
             this.tlPersonaDesktop.Controls.Add(this.txtDireccion, 1, 2);
             this.tlPersonaDesktop.Controls.Add(this.txtEmail, 3, 2);
             this.tlPersonaDesktop.Controls.Add(this.txtTelefono, 1, 3);
-            this.tlPersonaDesktop.Controls.Add(this.txtIdPlan, 3, 4);
             this.tlPersonaDesktop.Controls.Add(this.dtpFechaNacimiento, 3, 3);
             this.tlPersonaDesktop.Controls.Add(this.btnAceptar, 2, 5);
             this.tlPersonaDesktop.Controls.Add(this.cmbTiposPersona, 1, 4);
+            this.tlPersonaDesktop.Controls.Add(this.cmbPlanes, 3, 4);
             this.tlPersonaDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlPersonaDesktop.Location = new System.Drawing.Point(0, 0);
             this.tlPersonaDesktop.Name = "tlPersonaDesktop";
@@ -190,9 +190,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(276, 160);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 17);
+            this.label10.Size = new System.Drawing.Size(36, 17);
             this.label10.TabIndex = 11;
-            this.label10.Text = "ID Plan";
+            this.label10.Text = "Plan";
             // 
             // btnCancelar
             // 
@@ -246,13 +246,6 @@
             this.txtTelefono.Size = new System.Drawing.Size(169, 22);
             this.txtTelefono.TabIndex = 19;
             // 
-            // txtIdPlan
-            // 
-            this.txtIdPlan.Location = new System.Drawing.Point(421, 163);
-            this.txtIdPlan.Name = "txtIdPlan";
-            this.txtIdPlan.Size = new System.Drawing.Size(169, 22);
-            this.txtIdPlan.TabIndex = 20;
-            // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -278,6 +271,14 @@
             this.cmbTiposPersona.Name = "cmbTiposPersona";
             this.cmbTiposPersona.Size = new System.Drawing.Size(169, 24);
             this.cmbTiposPersona.TabIndex = 23;
+            // 
+            // cmbPlanes
+            // 
+            this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Location = new System.Drawing.Point(421, 163);
+            this.cmbPlanes.Name = "cmbPlanes";
+            this.cmbPlanes.Size = new System.Drawing.Size(169, 24);
+            this.cmbPlanes.TabIndex = 24;
             // 
             // PersonaDesktop
             // 
@@ -315,8 +316,8 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtIdPlan;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.ComboBox cmbTiposPersona;
+        private System.Windows.Forms.ComboBox cmbPlanes;
     }
 }

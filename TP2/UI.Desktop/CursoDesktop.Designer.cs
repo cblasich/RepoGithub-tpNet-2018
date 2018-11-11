@@ -32,7 +32,7 @@
             this.lblIdCurso = new System.Windows.Forms.Label();
             this.lblIdComision = new System.Windows.Forms.Label();
             this.lblIdMateria = new System.Windows.Forms.Label();
-            this.textIdCurso = new System.Windows.Forms.TextBox();
+            this.txtIdCurso = new System.Windows.Forms.TextBox();
             this.txtIdComision = new System.Windows.Forms.TextBox();
             this.txtIdMateria = new System.Windows.Forms.TextBox();
             this.txtCupo = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.tlpCursoDesktop.Controls.Add(this.lblIdCurso, 0, 0);
             this.tlpCursoDesktop.Controls.Add(this.lblIdComision, 0, 1);
             this.tlpCursoDesktop.Controls.Add(this.lblIdMateria, 0, 2);
-            this.tlpCursoDesktop.Controls.Add(this.textIdCurso, 1, 0);
+            this.tlpCursoDesktop.Controls.Add(this.txtIdCurso, 1, 0);
             this.tlpCursoDesktop.Controls.Add(this.txtIdComision, 1, 1);
             this.tlpCursoDesktop.Controls.Add(this.txtIdMateria, 1, 2);
             this.tlpCursoDesktop.Controls.Add(this.txtCupo, 3, 1);
@@ -65,7 +65,7 @@
             this.tlpCursoDesktop.Controls.Add(this.btnAceptar, 2, 3);
             this.tlpCursoDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCursoDesktop.Location = new System.Drawing.Point(0, 0);
-            this.tlpCursoDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpCursoDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.tlpCursoDesktop.Name = "tlpCursoDesktop";
             this.tlpCursoDesktop.RowCount = 4;
             this.tlpCursoDesktop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -105,19 +105,19 @@
             this.lblIdMateria.TabIndex = 6;
             this.lblIdMateria.Text = "ID Materia";
             // 
-            // textIdCurso
+            // txtIdCurso
             // 
-            this.textIdCurso.Location = new System.Drawing.Point(95, 4);
-            this.textIdCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textIdCurso.Name = "textIdCurso";
-            this.textIdCurso.ReadOnly = true;
-            this.textIdCurso.Size = new System.Drawing.Size(208, 22);
-            this.textIdCurso.TabIndex = 7;
+            this.txtIdCurso.Location = new System.Drawing.Point(95, 4);
+            this.txtIdCurso.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdCurso.Name = "txtIdCurso";
+            this.txtIdCurso.ReadOnly = true;
+            this.txtIdCurso.Size = new System.Drawing.Size(208, 22);
+            this.txtIdCurso.TabIndex = 7;
             // 
             // txtIdComision
             // 
             this.txtIdComision.Location = new System.Drawing.Point(95, 51);
-            this.txtIdComision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdComision.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdComision.Name = "txtIdComision";
             this.txtIdComision.Size = new System.Drawing.Size(208, 22);
             this.txtIdComision.TabIndex = 8;
@@ -125,7 +125,7 @@
             // txtIdMateria
             // 
             this.txtIdMateria.Location = new System.Drawing.Point(95, 98);
-            this.txtIdMateria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdMateria.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdMateria.Name = "txtIdMateria";
             this.txtIdMateria.Size = new System.Drawing.Size(208, 22);
             this.txtIdMateria.TabIndex = 9;
@@ -133,7 +133,7 @@
             // txtCupo
             // 
             this.txtCupo.Location = new System.Drawing.Point(422, 51);
-            this.txtCupo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCupo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(220, 22);
             this.txtCupo.TabIndex = 11;
@@ -161,7 +161,7 @@
             // txtAnio
             // 
             this.txtAnio.Location = new System.Drawing.Point(422, 4);
-            this.txtAnio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnio.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(220, 22);
             this.txtAnio.TabIndex = 10;
@@ -169,7 +169,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(422, 145);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 1;
@@ -180,7 +180,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(318, 145);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 28);
             this.btnAceptar.TabIndex = 0;
@@ -194,7 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 191);
             this.Controls.Add(this.tlpCursoDesktop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CursoDesktop";
             this.Text = "CursoDesktop";
             this.tlpCursoDesktop.ResumeLayout(false);
@@ -211,7 +211,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblIdMateria;
-        private System.Windows.Forms.TextBox textIdCurso;
+        private System.Windows.Forms.TextBox txtIdCurso;
         private System.Windows.Forms.TextBox txtIdComision;
         private System.Windows.Forms.TextBox txtIdMateria;
         private System.Windows.Forms.TextBox txtAnio;

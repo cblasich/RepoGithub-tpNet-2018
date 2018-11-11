@@ -8,15 +8,8 @@ namespace Business.Entities
 {
     public class Plan : BusinessEntity
     {
-        private int _idPlan;
         private string _descPlan;
         private int _idEspecialidad;
-
-        public int IdPlan
-        {
-            get { return _idPlan; }
-            set { _idPlan = value; }
-        }
 
         public string DescPlan
         {

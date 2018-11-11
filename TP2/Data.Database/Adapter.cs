@@ -11,7 +11,7 @@ namespace Data.Database
         //Clave1 por defecto a utlizar para la cadena de conexion
         //const string consKeyDefaultCnnString = "ConnStringLocalCaro";
 
-        //Clave2 por defecto a utlizar para la cadena de conexion
+         //Clave2 por defecto a utlizar para la cadena de conexion
         const string consKeyDefaultCnnString = "ConnStringLocalDavid";
 
         protected SqlConnection _sqlConn;

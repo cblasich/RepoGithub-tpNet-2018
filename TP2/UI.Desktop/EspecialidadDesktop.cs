@@ -41,9 +41,6 @@ namespace UI.Desktop
         }
 
         public override void MapearDeDatos()
-        /* va a ser utilizado en cada formulario para copiar la
-         información de las entidades a los controles del formulario (TextBox,
-         ComboBox, etc) para mostrar la infromación de cada entidad */
         {
             this.txtIdEspecialidad.Text = this.EspecialidadActual.Id.ToString();
             this.txtDescripcion.Text = this.EspecialidadActual.DescEspecialidad;
@@ -72,17 +69,13 @@ namespace UI.Desktop
                     break;
             }
         }
-
         public override void MapearADatos()
-        /* se va a utilizar para pasar la información de los controles
-        a una entidad para luego enviarla a las capas inferiores */
         {
             if (this.Modo == ModoForm.Alta)
             {
                 EspecialidadActual = new Especialidad();
                 EspecialidadActual.State = BusinessEntity.States.New;
             }
-
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
                 EspecialidadActual.DescEspecialidad = this.txtDescripcion.Text.Trim();
@@ -93,20 +86,58 @@ namespace UI.Desktop
                     EspecialidadActual.State = BusinessEntity.States.Modified;
                 }
             }
-
             if (this.Modo == ModoForm.Baja)
             {
                 EspecialidadActual.State = BusinessEntity.States.Deleted;
             }
+            if (this.Modo == ModoForm.Consulta)
+            {
+                EspecialidadActual.State = BusinessEntity.States.Unmodified;
+            }
         }
         public override void GuardarCambios()
-        /* método que se encargará de invocar al método correspondiente 
-        de la capa de negocio según sea el ModoForm en que se encuentre el formulario*/
         {
-            this.MapearADatos();
             EspecialidadLogic especialidadLogic = new EspecialidadLogic();
-            especialidadLogic.Save(this.EspecialidadActual);
-
+            if (this.Modo == ModoForm.Alta)
+            {
+                Especialidad especNueva = new Especialidad();
+                this.EspecialidadActual = especNueva;
+            }
+            if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
+            {
+                try
+                {
+                    this.MapearADatos();
+                    especialidadLogic.Save(this.EspecialidadActual);
+                }
+                catch (Exception e)
+                {
+                    this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (this.Modo == ModoForm.Baja)
+            {
+                PlanLogic planLogic = new PlanLogic();
+                List<Plan> planes = new List<Plan>();
+                planes = planLogic.GetPlanesPorIdEspecialidad(this.EspecialidadActual.Id);
+                if (planes.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Hay planes asociados a la especialidad elegida. Si elimina la especialidad, se borrarán dichos planes. Continuar de todos modos?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result.Equals(DialogResult.Yes))
+                    {
+                        //traer el id de cada plan de planes y set null el id_plan de las personas afectadas a ese plan
+                        foreach (Plan p in planes)
+                        {
+                            especialidadLogic.SetNullPlanDePersona(p.Id);
+                        }
+                        especialidadLogic.Delete(EspecialidadActual.Id);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
         }
         public override bool Validar()
         /* método que devuelva si los datos son válidos para poder
@@ -128,9 +159,7 @@ namespace UI.Desktop
                 this.Notificar("Advertencia", mensaje, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
         }
-
         public override void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         /* Notificar es el método que utilizaremos para unificar el mecanismo de
         avisos al usuario y en caso de tener que modificar la forma en que se
@@ -139,12 +168,10 @@ namespace UI.Desktop
         {
             MessageBox.Show(mensaje, titulo, botones, icono);
         }
-
         public override void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Validar()) this.GuardarCambios();

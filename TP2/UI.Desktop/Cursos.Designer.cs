@@ -32,17 +32,17 @@
             this.tscCursos = new System.Windows.Forms.ToolStripContainer();
             this.tlCursos = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsCursos = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscCursos.ContentPanel.SuspendLayout();
             this.tscCursos.TopToolStripPanel.SuspendLayout();
             this.tscCursos.SuspendLayout();
@@ -57,11 +57,13 @@
             // tscCursos.ContentPanel
             // 
             this.tscCursos.ContentPanel.Controls.Add(this.tlCursos);
-            this.tscCursos.ContentPanel.Size = new System.Drawing.Size(541, 280);
+            this.tscCursos.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tscCursos.ContentPanel.Size = new System.Drawing.Size(721, 348);
             this.tscCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscCursos.Location = new System.Drawing.Point(0, 0);
+            this.tscCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tscCursos.Name = "tscCursos";
-            this.tscCursos.Size = new System.Drawing.Size(541, 305);
+            this.tscCursos.Size = new System.Drawing.Size(721, 375);
             this.tscCursos.TabIndex = 0;
             this.tscCursos.Text = "toolStripContainer1";
             // 
@@ -79,11 +81,12 @@
             this.tlCursos.Controls.Add(this.btnSalir, 1, 1);
             this.tlCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlCursos.Location = new System.Drawing.Point(0, 0);
+            this.tlCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlCursos.Name = "tlCursos";
             this.tlCursos.RowCount = 2;
             this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlCursos.Size = new System.Drawing.Size(541, 280);
+            this.tlCursos.Size = new System.Drawing.Size(721, 348);
             this.tlCursos.TabIndex = 0;
             // 
             // dgvCursos
@@ -99,74 +102,12 @@
             this.Cupo});
             this.tlCursos.SetColumnSpan(this.dgvCursos, 2);
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCursos.Location = new System.Drawing.Point(3, 3);
+            this.dgvCursos.Location = new System.Drawing.Point(4, 4);
+            this.dgvCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
-            this.dgvCursos.Size = new System.Drawing.Size(535, 245);
+            this.dgvCursos.Size = new System.Drawing.Size(713, 304);
             this.dgvCursos.TabIndex = 0;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(382, 254);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(463, 254);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // tsCursos
-            // 
-            this.tsCursos.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsCursos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNuevo,
-            this.tsbEditar,
-            this.tsbEliminar});
-            this.tsCursos.Location = new System.Drawing.Point(3, 0);
-            this.tsCursos.Name = "tsCursos";
-            this.tsCursos.Size = new System.Drawing.Size(81, 25);
-            this.tsCursos.TabIndex = 0;
-            // 
-            // tsbNuevo
-            // 
-            this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
-            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
-            this.tsbNuevo.Text = "Nuevo";
-            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
-            this.tsbEditar.Text = "Editar";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
-            // 
-            // tsbEliminar
-            // 
-            this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
-            this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
-            this.tsbEliminar.Text = "Eliminar";
-            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // ID
             // 
@@ -203,12 +144,79 @@
             this.Cupo.Name = "Cupo";
             this.Cupo.ReadOnly = true;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(509, 316);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(617, 316);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(100, 28);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // tsCursos
+            // 
+            this.tsCursos.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsCursos.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsCursos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            this.tsbEditar,
+            this.tsbEliminar});
+            this.tsCursos.Location = new System.Drawing.Point(3, 0);
+            this.tsCursos.Name = "tsCursos";
+            this.tsCursos.Size = new System.Drawing.Size(123, 27);
+            this.tsCursos.TabIndex = 0;
+            // 
+            // tsbNuevo
+            // 
+            this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNuevo.Name = "tsbNuevo";
+            this.tsbNuevo.Size = new System.Drawing.Size(24, 24);
+            this.tsbNuevo.Text = "Nuevo";
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(24, 24);
+            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            // 
+            // tsbEliminar
+            // 
+            this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEliminar.Name = "tsbEliminar";
+            this.tsbEliminar.Size = new System.Drawing.Size(24, 24);
+            this.tsbEliminar.Text = "Eliminar";
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
+            // 
             // Cursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 305);
+            this.ClientSize = new System.Drawing.Size(721, 375);
             this.Controls.Add(this.tscCursos);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Cursos";
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.Cursos_Load);

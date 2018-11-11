@@ -25,11 +25,11 @@ namespace UI.Desktop
             try
             {
                 PersonaLogic pl = new PersonaLogic();
-                this.dgvPersonas.DataSource = pl.GetAllTabla();
+                this.dgvPersonas.DataSource = pl.GetAll();
             }
             catch (Exception e)
             {
-                this.Notificar("Se produjo un error", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("Se produjo un error al intentar mostrar la lista de personas.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,6 +61,17 @@ namespace UI.Desktop
             {
                 int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).Id;
                 PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                formPersona.ShowDialog();
+            }
+            this.Listar();
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvPersonas.SelectedRows.Count == 1)
+            {
+                int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).Id;
+                PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
                 formPersona.ShowDialog();
             }
 

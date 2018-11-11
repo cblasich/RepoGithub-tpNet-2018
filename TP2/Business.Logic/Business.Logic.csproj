@@ -40,9 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic.cs" />
+    <Compile Include="ComisionLogic.cs" />
     <Compile Include="CursoLogic.cs" />
     <Compile Include="EspecialidadLogic.cs" />
-    <Compile Include="MateriaLogic.cs" />
     <Compile Include="ModuloLogic.cs" />
     <Compile Include="ModuloUsuarioLogic.cs" />
     <Compile Include="PersonaLogic.cs" />

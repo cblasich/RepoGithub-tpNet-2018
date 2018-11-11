@@ -13,48 +13,26 @@ namespace Data.Database
     {
         public List<Modulo> GetAll()
         {
-            //instanciamos el objeto lista a retornar
             List<Modulo> modulos = new List<Modulo>();
 
             try
             {
-                //abrimos la conexion a la base de datos con el metodo que creamos antes
                 this.OpenConnection();
-
-                /* Creamos un objeto SqlCommand que sera la sentencia SQL
-                 que vamos a ejecutar contra la base de datos
-                 (los datos de la BD modulo, contraseña, servidor, etc.
-                 estan en el connection string */
 
                 SqlCommand cmdModulos = new SqlCommand("select * from modulos", SqlConn);
 
-                /* instanciamos un objeto DataReader que sera 
-                 el que recuperara los datos de la BD */
-
                 SqlDataReader drModulos = cmdModulos.ExecuteReader();
-
-                /* Read() lee una fila de las devueltas por el comando sql,
-                 carga los datos en drUsuarios para poder accederlos,
-                 devuelve verdadero mientras haya podido leer datos
-                 y avanza a la fila siguiente para el proximo read. */
 
                 while (drModulos.Read())
                 {
-                    /* Creamos un objeto Usuario de la capa de entidades para copiar
-                     los datos de la fila del DataReader al objeto de entidades.*/
-
                     Modulo mod = new Modulo();
-
-                    // Ahora copiamos los datos de la fila al objeto:
 
                     mod.Id = (int)drModulos["id_modulo"];
                     mod.DescModulo = (string)drModulos["desc_modulo"];
                     mod.Ejecuta = (string)drModulos["ejecuta"];
                     
-                    // Agregamos el objeto con datos a la lista que devolveremos
                     modulos.Add(mod);
                 }
-                //Cerramos el DataReader
                 drModulos.Close();
             }
             catch (Exception Ex)
@@ -64,11 +42,8 @@ namespace Data.Database
             }
             finally
             {
-                //Cerramos la conexion a la BD
                 this.CloseConnection();
             }
-
-            // Devolvemos el objeto:
             return modulos;
         }
 
@@ -118,9 +93,14 @@ namespace Data.Database
                 //Ejecutamos la sentencia SQL
                 cmdDelete.ExecuteNonQuery();
             }
+            catch (SqlException sqlEx)
+            {
+                Exception ExcepcionManejada = new Exception("El módulo indicado tiene modulos de usuario vinculados. Primero debe eliminarlos.", sqlEx);
+                throw ExcepcionManejada;
+            }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al eliminar modulo.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al intentar eliminar modulo.", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -137,7 +117,7 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand("UPDATE modulos SET desc_modulo = @desc_modulo, ejecuta = @ejecuta " +
                 "WHERE id_modulo = @id", SqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = 
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = modulo.Id;
                 cmdSave.Parameters.Add("@desc_modulo", SqlDbType.VarChar, 50).Value = modulo.DescModulo;
                 cmdSave.Parameters.Add("@ejecuta", SqlDbType.VarChar, 50).Value = modulo.Ejecuta;
                 cmdSave.ExecuteNonQuery();

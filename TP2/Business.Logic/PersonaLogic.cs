@@ -18,50 +18,41 @@ namespace Business.Logic
             get { return _personaData; }
             set { _personaData = value; }
         }
-
         public PersonaLogic()
         {
             this.PersonaData = new PersonaAdapter();
         }
-
         public Persona GetOnePorPersona(int idPersona)
         {
             return PersonaData.GetOnePorPersona(idPersona);
         }
-
         public Persona GetOnePorUsuario(int idUsuario)
         {
             return PersonaData.GetOnePorUsuario(idUsuario);
         }
-
         public Persona GetOnePorLegajo(int legajo)
         {
             return PersonaData.GetOnePorLegajo(legajo);
         }
-
-        public DataTable GetAllTabla()
+        public List<Persona> GetAll()
         {
-            return PersonaData.GetAllTabla();
+            try
+            {
+                return PersonaData.GetAll();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de personas", Ex);
+                throw ExcepcionManejada;
+            }
         }
-
-        public List<Persona> GetAllLista()
-        {
-            return PersonaData.GetAllLista();
-        }
-
-        public DataTable GetAll(Enumeradores.TiposPersonas tipoPersona)
-        {
-            return PersonaData.GetAll(tipoPersona);
-        }
-
         public DataTable GetAllConPlanes()
         {
             return PersonaData.GetAllConPlanes();
         }
-
         public void Save(Persona persona)
         {
-            if (persona.State == BusinessEntity.States.New || persona.State == BusinessEntity.States.Modified)
+            if (persona.State == BusinessEntity.States.New)
             {
                 if (this.ValidarLegajo(persona))
                 {
@@ -69,12 +60,20 @@ namespace Business.Logic
                 }
                 else throw new Exception("El legajo ingresado ya existe.");
             }
+            if (persona.State == BusinessEntity.States.Modified)
+            {
+                this.PersonaData.Save(persona);
+            }
+            if (persona.State == BusinessEntity.States.Deleted)
+            {
+                this.PersonaData.Save(persona);
+            }
         }
 
         public bool ValidarLegajo(Persona persona)
         {
             bool valido = true;
-            List<Persona> personas = this.GetAllLista();
+            List<Persona> personas = this.GetAll();
             foreach (Persona p in personas)
             {
                 if (p.Legajo == persona.Legajo && p.Id != persona.Id)
@@ -86,9 +85,9 @@ namespace Business.Logic
             return valido;
         }
 
-        public void Delete(int ID)
+        public void Delete(int idPersona, int idUsuario)
         {
-            this.PersonaData.Delete(ID);
+            this.PersonaData.Delete(idPersona, idUsuario);
         }
 
     }

@@ -15,24 +15,14 @@ namespace Data.Database
         {
             //instanciamos el objeto lista a retornar
             List<Especialidad> especialidades = new List<Especialidad>();
-
             try
             {
                 //abrimos la conexion a la base de datos con el metodo que creamos antes
                 this.OpenConnection();
-
-                /* Creamos un objeto SqlCommand que sera la sentencia SQL
-                 que vamos a ejecutar contra la base de datos
-                 (los datos de la BD especialidad, contraseña, servidor, etc.
-                 estan en el connection string */
-
                 SqlCommand cmdEspecialidades = new SqlCommand("select * from especialidades", SqlConn);
-
                 /* instanciamos un objeto DataReader que sera 
                  el que recuperara los datos de la BD */
-
                 SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
-
                 /* Read() lee una fila de las devueltas por el comando sql,
                  carga los datos en drEspecialidades para poder accederlos,
                  devuelve verdadero mientras haya podido leer datos
@@ -101,20 +91,39 @@ namespace Data.Database
 
             return especialidad;
         }
-
-        public void Delete(int ID)
+        public void SetNullPlanDePersona(int idPlan)
+        {
+            //seteo en null el plan de la persona cuyo plan = idPlan recibido
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSetNullPlan = new SqlCommand("update personas set id_plan=null where id_plan=@idPlan", SqlConn);
+                cmdSetNullPlan.Parameters.Add("@idPlan", SqlDbType.Int).Value = idPlan;
+                cmdSetNullPlan.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al setear en null el plan de las personas.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        public void Delete(int idEspec)
         {
             try
             {
-                //Abrimos conexion
                 this.OpenConnection();
-
                 //Creamos la sentencia SQL y asignamos un valor al parametro
-                SqlCommand cmdDelete = new SqlCommand("delete especialidades where id_especialidad=@id", SqlConn);
-                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-
+                SqlCommand cmdDeleteEsp = new SqlCommand("delete especialidades where id_especialidad=@idEspec", SqlConn);
+                cmdDeleteEsp.Parameters.Add("@idEspec", SqlDbType.Int).Value = idEspec;
+                SqlCommand cmdDeletePlanes = new SqlCommand("delete planes where id_especialidad=@idEspec", SqlConn);
+                cmdDeletePlanes.Parameters.Add("@idEspec", SqlDbType.Int).Value = idEspec;
                 //Ejecutamos la sentencia SQL
-                cmdDelete.ExecuteNonQuery();
+                cmdDeletePlanes.ExecuteNonQuery();
+                cmdDeleteEsp.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -126,8 +135,6 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-
-
         protected void Update(Especialidad especialidad)
         {
             try
@@ -180,11 +187,7 @@ namespace Data.Database
 
         public void Save(Especialidad especialidad)
         {
-            if (especialidad.State == BusinessEntity.States.Deleted)
-            {
-                this.Delete(especialidad.Id);
-            }
-            else if (especialidad.State == BusinessEntity.States.New)
+            if (especialidad.State == BusinessEntity.States.New)
             {
                 this.Insert(especialidad);
             }

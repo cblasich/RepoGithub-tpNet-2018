@@ -35,9 +35,15 @@ namespace Business.Logic
             }
         }
 
-        public Usuario GetOne(int id)
+        public Usuario GetOne(int id) //trae usuario por idUsuario
         {
             return UsuarioData.GetOne(id);        
+        }
+
+        
+        public Usuario GetOnePorIdPersona(int idPersona) //ELIMINAR
+        {
+            return UsuarioData.GetOnePorIdPersona(idPersona);
         }
 
         public void Delete(int id)
