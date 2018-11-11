@@ -60,3 +60,73 @@ C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Consola\obj\
 C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Consola\obj\Debug\UI.Consola.pdb
 C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Consola\bin\Debug\Util.dll
 C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP2 C&D 2016\TP2\UI.Consola\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\UI.Consola.exe.config
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Util.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\obj\Debug\UI.Consola.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\obj\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TP NET MIOOO\TP2\UI.Consola\obj\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.exe.config
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Util.dll
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.exe.config
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Util.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\Caro\Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.exe.config
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Util.dll
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.exe
+C:\Users\Caro\Documents\Caro\- Facu\Electivas\NET\TPNETMIO\TP2\UI.Consola\obj\Debug\UI.Consola.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\UI.Consola.exe.config
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Data.Database.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Util.dll
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\bin\Debug\Util.pdb
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\obj\Debug\UI.Consola.csprojResolveAssemblyReference.cache
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\obj\Debug\UI.Consola.exe
+D:\GitHub\RepoGithub-tpNet-2018\TP2\UI.Consola\obj\Debug\UI.Consola.pdb

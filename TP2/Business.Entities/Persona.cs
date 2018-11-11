@@ -14,9 +14,10 @@ namespace Business.Entities
         private string _direccion;
         private string _email;
         private string _telefono;
-        private DateTime _fechaNac;
+        private string _fechaNac;
         private int _legajo;
-        private Enumeradores.TiposPersonas _tipoPersona;
+        //private Enumeradores.TiposPersonas _tipoPersona;
+        private int _tipoPersona;
         private int _idPlan;
 
 
@@ -50,7 +51,7 @@ namespace Business.Entities
             set { _telefono = value; }
         }
 
-        public DateTime FechaNac
+        public string FechaNac
         {
             get { return _fechaNac; }
             set { _fechaNac = value; }
@@ -62,7 +63,12 @@ namespace Business.Entities
             set { _legajo = value; }
         }
 
-        public Enumeradores.TiposPersonas TipoPersona
+        //public Enumeradores.TiposPersonas TipoPersona
+        //{
+        //    get { return _tipoPersona; }
+        //    set { _tipoPersona = value; }
+        //}
+        public int TipoPersona
         {
             get { return _tipoPersona; }
             set { _tipoPersona = value; }

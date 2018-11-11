@@ -10,7 +10,7 @@ namespace Util
     {
         public enum TiposPersonas
         {
-            Alumno,
+            Alumno=1,
             Docente,
             Administrador
         }
@@ -35,6 +35,5 @@ namespace Util
             Aprobado,
             Libre
         }
-
     }
 }

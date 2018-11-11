@@ -19,6 +19,7 @@ namespace UI.Desktop
         {
             InitializeComponent();
             CargarComboTiposPersona();
+            CargarComboPlanes();
         }
 
         public PersonaDesktop(ModoForm modo):this () 
@@ -26,11 +27,9 @@ namespace UI.Desktop
         {
             this.Modo = modo;
         }
-
         public PersonaDesktop(int id, ModoForm modo):this()
         {
             this.Modo = modo;
-            
             try
             {
                 PersonaLogic perLogic = new PersonaLogic();
@@ -42,9 +41,7 @@ namespace UI.Desktop
                 this.Notificar(e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private Persona _personaActual;
-
         public Persona PersonaActual
         {
             get { return _personaActual; }
@@ -55,10 +52,14 @@ namespace UI.Desktop
         {
             this.cmbTiposPersona.DataSource = Enum.GetValues(typeof(Enumeradores.TiposPersonas));
         }
-
+        private void CargarComboPlanes()
+        {
+            PlanLogic planLogic = new PlanLogic();
+            this.cmbPlanes.ValueMember = "id_plan";
+            this.cmbPlanes.DisplayMember = "desc_plan";
+            this.cmbPlanes.DataSource = planLogic.GetAllDT();
+        }
         public override void MapearADatos()
-        /* se va a utilizar para pasar la información de los controles
-         a una entidad para luego enviarla a las capas inferiores */
         {
             if (this.Modo == ModoForm.Alta)
             {
@@ -66,20 +67,19 @@ namespace UI.Desktop
             }
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
-                this.PersonaActual.Nombre = this.txtNombre.Text.Trim();
-                this.PersonaActual.Apellido = this.txtApellido.Text.Trim();
-                this.PersonaActual.Legajo = Convert.ToInt32(this.txtLegajo.Text.Trim());
-                this.PersonaActual.Email = this.txtEmail.Text.Trim();
-                this.PersonaActual.Telefono = this.txtTelefono.Text.Trim();
-                this.PersonaActual.Direccion = this.txtDireccion.Text.Trim();
-                this.PersonaActual.FechaNac = this.dtpFechaNacimiento.Value;
-                this.PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTiposPersona.SelectedItem;
-
-                
                 if (this.Modo == ModoForm.Modificacion)
                 {
                     PersonaActual.Id = Convert.ToInt16(this.txtId.Text.Trim());
                 }
+                PersonaActual.Nombre = this.txtNombre.Text.Trim();
+                PersonaActual.Apellido = this.txtApellido.Text.Trim();
+                PersonaActual.Legajo = Convert.ToInt32(this.txtLegajo.Text.Trim());
+                PersonaActual.Email = this.txtEmail.Text.Trim();
+                PersonaActual.Telefono = this.txtTelefono.Text.Trim();
+                PersonaActual.Direccion = this.txtDireccion.Text.Trim();
+                PersonaActual.FechaNac = this.dtpFechaNacimiento.Value.ToString();
+                PersonaActual.TipoPersona = (int)this.cmbTiposPersona.SelectedItem;
+                PersonaActual.IdPlan = (int)this.cmbPlanes.SelectedValue;
             }
 
             switch (this.Modo)
@@ -98,23 +98,25 @@ namespace UI.Desktop
                     break;
             }
         }
-
         public override void MapearDeDatos()
-        /* va a ser utilizado en cada formulario para copiar la
-         información de las entidades a los controles del formulario (TextBox,
-         ComboBox, etc) para mostrar la información de cada entidad */
         {
-            this.txtId.Text = this.PersonaActual.Id.ToString();
-            this.txtApellido.Text = this.PersonaActual.Apellido;
-            this.txtNombre.Text = this.PersonaActual.Nombre;
-            this.txtDireccion.Text = this.PersonaActual.Direccion;
-            this.txtEmail.Text = this.PersonaActual.Email;
-            this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-            this.txtTelefono.Text = this.PersonaActual.Telefono;
-            this.dtpFechaNacimiento.Value = this.PersonaActual.FechaNac;
+            this.txtId.Text = PersonaActual.Id.ToString();
+            this.txtApellido.Text = PersonaActual.Apellido;
+            this.txtNombre.Text = PersonaActual.Nombre;
+            this.txtDireccion.Text = PersonaActual.Direccion;
+            this.txtEmail.Text = PersonaActual.Email;
+            this.txtLegajo.Text = PersonaActual.Legajo.ToString();
+            this.txtTelefono.Text = PersonaActual.Telefono;
+            this.dtpFechaNacimiento.Value = Convert.ToDateTime(PersonaActual.FechaNac);
+            this.cmbTiposPersona.DisplayMember = PersonaActual.TipoPersona.ToString();
+            this.cmbPlanes.SelectedValue = PersonaActual.IdPlan;
 
             switch (this.Modo)
             {
+                case ModoForm.Alta:
+                    this.Text = "Alta de Persona";
+                    this.btnAceptar.Text = "Guardar";
+                    break;
                 case ModoForm.Modificacion:
                     this.Text = "Modificacion de Persona";
                     btnAceptar.Text = "Guardar";
@@ -133,34 +135,40 @@ namespace UI.Desktop
 
         public override void GuardarCambios()
         {
-            PersonaLogic pl = new PersonaLogic();
+            PersonaLogic perLogic = new PersonaLogic();
+            if (this.Modo == ModoForm.Alta)
+            {
+                Persona perNueva = new Persona();
+                this.PersonaActual = perNueva;
+            }
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
-                //Copio datos del formulario a la persona
-                this.MapearADatos();
                 try
                 {
-                    pl.Save(this.PersonaActual);
+                    this.MapearADatos();
+                    perLogic.Save(this.PersonaActual);
                 }
                 catch (Exception e)
                 {
-                    this.Notificar(e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (this.Modo == ModoForm.Baja)
             {
                 try
                 {
-                    //Elimino la persona
-                    pl.Delete(PersonaActual.Id);
+                    UsuarioLogic usuLogic = new UsuarioLogic();
+                    Usuario usuActual = new Usuario();
+                    usuActual = usuLogic.GetOnePorIdPersona(this.PersonaActual.Id);
+                    //Elimino la persona. El usuario lo elimino desde la capa de datos
+                    perLogic.Delete(PersonaActual.Id, usuActual.Id);
                 }
                 catch (Exception e)
                 {
-                    this.Notificar(e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
         public override bool Validar()
         {
             string mensaje = "";
@@ -211,20 +219,18 @@ namespace UI.Desktop
                 return false;
             }
         }
-
+        public override void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+        {
+            MessageBox.Show(mensaje, titulo, botones, icono);
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Validar()) this.GuardarCambios();
             this.Close();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-
-
     }
 }

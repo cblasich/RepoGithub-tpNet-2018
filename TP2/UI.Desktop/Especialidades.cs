@@ -20,36 +20,36 @@ namespace UI.Desktop
             InitializeComponent();
             this.dgvEspecialidades.AutoGenerateColumns = false;
         }
-
         public void Listar()
         {
-            EspecialidadLogic el = new EspecialidadLogic();
-            this.dgvEspecialidades.DataSource = el.GetAll();
-
+            try 
+            {
+                EspecialidadLogic el = new EspecialidadLogic();
+                this.dgvEspecialidades.DataSource = el.GetAll();
+            }
+            catch (Exception e)
+            {
+                this.Notificar("Se produjo un error al intentar mostrar la lista de especialidades.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void Especialidades_Load(object sender, EventArgs e)
         {
             Listar();
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Listar();
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
             formEspecialidad.ShowDialog();
             this.Listar();  
         }
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if (this.dgvEspecialidades.SelectedRows.Count == 1)
@@ -61,7 +61,6 @@ namespace UI.Desktop
 
             this.Listar();
         }
-
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             if (this.dgvEspecialidades.SelectedRows.Count == 1)
@@ -70,7 +69,6 @@ namespace UI.Desktop
                 EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Baja);
                 formEspecialidad.ShowDialog();
             }
-
             this.Listar();
         }
     }

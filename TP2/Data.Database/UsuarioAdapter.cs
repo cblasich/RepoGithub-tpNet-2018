@@ -14,7 +14,8 @@ namespace Data.Database
             //instanciamos el objeto lista a retornar
             List<Usuario> usuarios = new List<Usuario>();
 
-            try { 
+            try 
+            { 
                 //abrimos la conexion a la base de datos con el metodo que creamos antes
                 this.OpenConnection();
 
@@ -22,8 +23,8 @@ namespace Data.Database
                  que vamos a ejecutar contra la base de datos
                  (los datos de la BD usuario, contraseña, servidor, etc.
                  estan en el connection string */
-            
-                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", SqlConn);
+
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios inner join personas ON usuarios.id_persona = personas.id_persona", SqlConn);
 
                 /* instanciamos un objeto DataReader que sera 
                  el que recuperara los datos de la BD */
@@ -41,6 +42,7 @@ namespace Data.Database
                      los datos de la fila del DataReader al objeto de entidades.*/
 
                     Usuario usr = new Usuario();
+
                     if ((int)drUsuarios["id_persona"] > 0) 
                     {
                         // Ahora copiamos los datos de la fila al objeto:
@@ -49,6 +51,9 @@ namespace Data.Database
                         usr.Clave = (string)drUsuarios["clave"];
                         usr.Habilitado = (bool)drUsuarios["habilitado"];
                         usr.IdPersona = (int)drUsuarios["id_persona"];
+                        usr.Nombre = (string)drUsuarios["nombre"];
+                        usr.Apellido = (string)drUsuarios["apellido"];
+                        usr.Email = (string)drUsuarios["email"];
                     }
                     // Agregamos el objeto con datos a la lista que devolveremos
                     usuarios.Add(usr);
@@ -102,7 +107,38 @@ namespace Data.Database
 
             return usr;
         }
+        public Usuario GetOnePorIdPersona(int idPersona)
+        {
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdGetOne = new SqlCommand("SELECT * FROM usuarios u " +
+                    "INNER JOIN personas p ON p.id_persona = u.id_persona " +
+                    "WHERE u.id_persona = @id_persona", this.SqlConn);
 
+                cmdGetOne.Parameters.Add("@id_persona", SqlDbType.Int).Value = idPersona;
+                SqlDataReader drUsuarios = cmdGetOne.ExecuteReader();
+                while (drUsuarios.Read())
+                {
+                    usr.Id = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.IdPersona = (int)drUsuarios["id_persona"];
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception("Error al recuperar datos del usuario: " + idPersona, Ex);
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usr;
+        }
         public void Delete(int ID)
         {
             try
@@ -111,7 +147,35 @@ namespace Data.Database
                 this.OpenConnection();
 
                 //Creamos la sentencia SQL y asignamos un valor al parametro
-                SqlCommand cmdDelete = new SqlCommand("delete usuarios where id_usuario=@id", SqlConn);
+                SqlCommand cmdDelete1 = new SqlCommand("DELETE modulos_usuarios where id_usuario=@id", this.SqlConn);
+                cmdDelete1.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlCommand cmdDelete2 = new SqlCommand("DELETE usuarios where id_usuario=@id", this.SqlConn);
+                cmdDelete2.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+
+                //Ejecutamos la sentencia SQL
+                cmdDelete1.ExecuteNonQuery();
+                cmdDelete2.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al intentar eliminar usuario.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
+        public void DeleteUsuPorIdPersona(int ID)
+        {
+            try
+            {
+                //Abrimos conexion
+                this.OpenConnection();
+
+                //Creamos la sentencia SQL y asignamos un valor al parametro
+                SqlCommand cmdDelete = new SqlCommand("delete usuarios where id_persona=@id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
 
                 //Ejecutamos la sentencia SQL
@@ -127,7 +191,6 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-
 
         protected void Update(Usuario usuario)
         {
@@ -155,7 +218,6 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-
 
         protected void Insert (Usuario usuario)
         {

@@ -22,18 +22,20 @@ namespace UI.Desktop
 
         public void Listar()
         {
-
+            try
+            {
             CursoLogic cl = new CursoLogic();
-
             this.dgvCursos.DataSource = cl.GetAll();
-
+            }
+            catch (Exception e)
+            {
+                this.Notificar("Se produjo un error al intentar mostrar la lista de cursos.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void Cursos_Load(object sender, EventArgs e)
         {
             this.Listar();
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             this.Listar();
@@ -43,14 +45,12 @@ namespace UI.Desktop
         {
             this.Close();
         }
-
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             CursoDesktop formCurso = new CursoDesktop(ApplicationForm.ModoForm.Alta);
             formCurso.ShowDialog();
             this.Listar();
         }
-
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if (this.dgvCursos.SelectedRows.Count == 1)

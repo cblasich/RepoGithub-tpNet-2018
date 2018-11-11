@@ -36,11 +36,13 @@ namespace Business.Logic
         {
             EspecialidadData.Save(especialidad);
         }
-
-        public void Delete(int id)
+        public void SetNullPlanDePersona(int idPlan)
         {
-            EspecialidadData.Delete(id);
+            EspecialidadData.SetNullPlanDePersona(idPlan);
         }
-
+        public void Delete(int idEspec)
+        {
+            EspecialidadData.Delete(idEspec);
+        }
     }
 }

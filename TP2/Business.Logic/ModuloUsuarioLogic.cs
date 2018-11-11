@@ -16,5 +16,25 @@ namespace Business.Logic
             get { return _moduloUsuarioData; }
             set { _moduloUsuarioData = value; }
         }
+        public ModuloUsuarioLogic()
+        {
+            ModuloUsuarioData = new ModuloUsuarioAdapter();
+        }
+        public List<ModuloUsuario> GetAll()
+        {
+            return ModuloUsuarioData.GetAll();
+        }
+        public ModuloUsuario GetOne(int id)
+        {
+            return ModuloUsuarioData.GetOne(id);
+        }
+        public void Save(ModuloUsuario modUsu)
+        {
+            ModuloUsuarioData.Save(modUsu);
+        }
+        public void Delete(int id)
+        {
+            ModuloUsuarioData.Delete(id);
+        }
     }
 }

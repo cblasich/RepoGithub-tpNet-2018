@@ -24,8 +24,15 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.DataSource = ul.GetAll();
+            try
+            {
+                UsuarioLogic ul = new UsuarioLogic();
+                this.dgvUsuarios.DataSource = ul.GetAll();
+            }
+            catch (Exception e)
+            {
+                this.Notificar("Se produjo un error al intentar mostrar la lista de usuarios.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
@@ -63,7 +70,6 @@ namespace UI.Desktop
                 UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                 formUsuario.ShowDialog();
             }
-                
             this.Listar();
         }
 

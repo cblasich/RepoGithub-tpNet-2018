@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.tlpUsuarioDesktop = new System.Windows.Forms.TableLayoutPanel();
-            this.lblId = new System.Windows.Forms.Label();
-            this.chkHabilitado = new System.Windows.Forms.CheckBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
-            this.lblConfirmarClave = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblConfirmarClave = new System.Windows.Forms.Label();
+            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.chkExistePersona = new System.Windows.Forms.CheckBox();
             this.lblApellido = new System.Windows.Forms.Label();
+            this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblLegajo = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblFechaNac = new System.Windows.Forms.Label();
-            this.lblIdPlan = new System.Windows.Forms.Label();
-            this.txtLegajo = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtIdPlan = new System.Windows.Forms.TextBox();
-            this.chkExistePersona = new System.Windows.Forms.CheckBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtTipoPersona = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblTipoPersona = new System.Windows.Forms.Label();
-            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.lblLegajo = new System.Windows.Forms.Label();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
+            this.lblFechaNac = new System.Windows.Forms.Label();
+            this.lblIdPlan = new System.Windows.Forms.Label();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cmbTiposPersona = new System.Windows.Forms.ComboBox();
+            this.cmbPlanes = new System.Windows.Forms.ComboBox();
             this.tlpUsuarioDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,15 +90,15 @@
             this.tlpUsuarioDesktop.Controls.Add(this.lblDireccion, 2, 4);
             this.tlpUsuarioDesktop.Controls.Add(this.txtDireccion, 3, 4);
             this.tlpUsuarioDesktop.Controls.Add(this.txtTelefono, 3, 5);
-            this.tlpUsuarioDesktop.Controls.Add(this.txtTipoPersona, 3, 6);
             this.tlpUsuarioDesktop.Controls.Add(this.lblTelefono, 2, 5);
             this.tlpUsuarioDesktop.Controls.Add(this.lblTipoPersona, 2, 6);
             this.tlpUsuarioDesktop.Controls.Add(this.lblLegajo, 0, 7);
             this.tlpUsuarioDesktop.Controls.Add(this.txtLegajo, 1, 7);
             this.tlpUsuarioDesktop.Controls.Add(this.lblFechaNac, 0, 4);
             this.tlpUsuarioDesktop.Controls.Add(this.lblIdPlan, 0, 6);
-            this.tlpUsuarioDesktop.Controls.Add(this.txtIdPlan, 1, 6);
-            this.tlpUsuarioDesktop.Controls.Add(this.dtpFechaNac, 1, 4);
+            this.tlpUsuarioDesktop.Controls.Add(this.dtpFechaNacimiento, 1, 4);
+            this.tlpUsuarioDesktop.Controls.Add(this.cmbTiposPersona, 3, 6);
+            this.tlpUsuarioDesktop.Controls.Add(this.cmbPlanes, 1, 6);
             this.tlpUsuarioDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpUsuarioDesktop.Location = new System.Drawing.Point(0, 0);
             this.tlpUsuarioDesktop.Margin = new System.Windows.Forms.Padding(4);
@@ -118,6 +118,96 @@
             this.tlpUsuarioDesktop.Size = new System.Drawing.Size(623, 299);
             this.tlpUsuarioDesktop.TabIndex = 0;
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(3, 113);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 22;
+            this.lblEmail.Text = "Email";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(446, 263);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(103, 25);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(4, 199);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(57, 17);
+            this.lblUsuario.TabIndex = 5;
+            this.lblUsuario.Text = "Usuario";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(148, 116);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(165, 22);
+            this.txtEmail.TabIndex = 26;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(330, 263);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(100, 25);
+            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // lblConfirmarClave
+            // 
+            this.lblConfirmarClave.AutoSize = true;
+            this.lblConfirmarClave.Location = new System.Drawing.Point(330, 229);
+            this.lblConfirmarClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConfirmarClave.Name = "lblConfirmarClave";
+            this.lblConfirmarClave.Size = new System.Drawing.Size(108, 17);
+            this.lblConfirmarClave.TabIndex = 6;
+            this.lblConfirmarClave.Text = "Confirmar Clave";
+            // 
+            // txtConfirmarClave
+            // 
+            this.txtConfirmarClave.Location = new System.Drawing.Point(446, 233);
+            this.txtConfirmarClave.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.Size = new System.Drawing.Size(164, 22);
+            this.txtConfirmarClave.TabIndex = 16;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(3, 57);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
+            this.lblNombre.TabIndex = 17;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(149, 203);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(164, 22);
+            this.txtUsuario.TabIndex = 15;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(148, 60);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(165, 22);
+            this.txtNombre.TabIndex = 20;
+            // 
             // lblId
             // 
             this.lblId.AutoSize = true;
@@ -129,17 +219,6 @@
             this.lblId.Text = "ID Usuario";
             this.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // chkHabilitado
-            // 
-            this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(330, 31);
-            this.chkHabilitado.Margin = new System.Windows.Forms.Padding(4);
-            this.chkHabilitado.Name = "chkHabilitado";
-            this.chkHabilitado.Size = new System.Drawing.Size(93, 21);
-            this.chkHabilitado.TabIndex = 7;
-            this.chkHabilitado.Text = "Habilitado";
-            this.chkHabilitado.UseVisualStyleBackColor = true;
-            // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(149, 31);
@@ -148,149 +227,6 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(164, 22);
             this.txtId.TabIndex = 10;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(3, 57);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 17);
-            this.lblNombre.TabIndex = 17;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // txtConfirmarClave
-            // 
-            this.txtConfirmarClave.Location = new System.Drawing.Point(446, 231);
-            this.txtConfirmarClave.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConfirmarClave.Name = "txtConfirmarClave";
-            this.txtConfirmarClave.Size = new System.Drawing.Size(164, 22);
-            this.txtConfirmarClave.TabIndex = 16;
-            // 
-            // lblConfirmarClave
-            // 
-            this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(330, 227);
-            this.lblConfirmarClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblConfirmarClave.Name = "lblConfirmarClave";
-            this.lblConfirmarClave.Size = new System.Drawing.Size(108, 17);
-            this.lblConfirmarClave.TabIndex = 6;
-            this.lblConfirmarClave.Text = "Confirmar Clave";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(445, 60);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(165, 22);
-            this.txtApellido.TabIndex = 19;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(148, 60);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(165, 22);
-            this.txtNombre.TabIndex = 20;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(4, 197);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(57, 17);
-            this.lblUsuario.TabIndex = 5;
-            this.lblUsuario.Text = "Usuario";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(149, 201);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(164, 22);
-            this.txtUsuario.TabIndex = 15;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(329, 57);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(58, 17);
-            this.lblApellido.TabIndex = 18;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(4, 227);
-            this.lblClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(43, 17);
-            this.lblClave.TabIndex = 3;
-            this.lblClave.Text = "Clave";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(149, 231);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(164, 22);
-            this.txtClave.TabIndex = 13;
-            // 
-            // lblLegajo
-            // 
-            this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(3, 169);
-            this.lblLegajo.Name = "lblLegajo";
-            this.lblLegajo.Size = new System.Drawing.Size(51, 17);
-            this.lblLegajo.TabIndex = 21;
-            this.lblLegajo.Text = "Legajo";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(3, 113);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 17);
-            this.lblEmail.TabIndex = 22;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblFechaNac
-            // 
-            this.lblFechaNac.AutoSize = true;
-            this.lblFechaNac.Location = new System.Drawing.Point(3, 85);
-            this.lblFechaNac.Name = "lblFechaNac";
-            this.lblFechaNac.Size = new System.Drawing.Size(139, 17);
-            this.lblFechaNac.TabIndex = 23;
-            this.lblFechaNac.Text = "Fecha de nacimiento";
-            // 
-            // lblIdPlan
-            // 
-            this.lblIdPlan.AutoSize = true;
-            this.lblIdPlan.Location = new System.Drawing.Point(3, 141);
-            this.lblIdPlan.Name = "lblIdPlan";
-            this.lblIdPlan.Size = new System.Drawing.Size(50, 17);
-            this.lblIdPlan.TabIndex = 24;
-            this.lblIdPlan.Text = "Id plan";
-            // 
-            // txtLegajo
-            // 
-            this.txtLegajo.Location = new System.Drawing.Point(148, 172);
-            this.txtLegajo.Name = "txtLegajo";
-            this.txtLegajo.Size = new System.Drawing.Size(165, 22);
-            this.txtLegajo.TabIndex = 25;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(148, 116);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(165, 22);
-            this.txtEmail.TabIndex = 26;
-            // 
-            // txtIdPlan
-            // 
-            this.txtIdPlan.Location = new System.Drawing.Point(148, 144);
-            this.txtIdPlan.Name = "txtIdPlan";
-            this.txtIdPlan.Size = new System.Drawing.Size(165, 22);
-            this.txtIdPlan.TabIndex = 28;
             // 
             // chkExistePersona
             // 
@@ -303,27 +239,50 @@
             this.chkExistePersona.UseVisualStyleBackColor = true;
             this.chkExistePersona.CheckedChanged += new System.EventHandler(this.chkExistePersona_CheckedChanged);
             // 
-            // btnAceptar
+            // lblApellido
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(330, 261);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 25);
-            this.btnAceptar.TabIndex = 8;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(329, 57);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(58, 17);
+            this.lblApellido.TabIndex = 18;
+            this.lblApellido.Text = "Apellido";
             // 
-            // btnCancelar
+            // chkHabilitado
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(446, 261);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(103, 25);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Location = new System.Drawing.Point(330, 31);
+            this.chkHabilitado.Margin = new System.Windows.Forms.Padding(4);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(93, 21);
+            this.chkHabilitado.TabIndex = 7;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Location = new System.Drawing.Point(4, 229);
+            this.lblClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(43, 17);
+            this.lblClave.TabIndex = 3;
+            this.lblClave.Text = "Clave";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(149, 233);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(164, 22);
+            this.txtClave.TabIndex = 13;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(445, 60);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(165, 22);
+            this.txtApellido.TabIndex = 19;
             // 
             // lblDireccion
             // 
@@ -348,13 +307,6 @@
             this.txtTelefono.Size = new System.Drawing.Size(165, 22);
             this.txtTelefono.TabIndex = 32;
             // 
-            // txtTipoPersona
-            // 
-            this.txtTipoPersona.Location = new System.Drawing.Point(445, 144);
-            this.txtTipoPersona.Name = "txtTipoPersona";
-            this.txtTipoPersona.Size = new System.Drawing.Size(165, 22);
-            this.txtTipoPersona.TabIndex = 33;
-            // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
@@ -373,12 +325,62 @@
             this.lblTipoPersona.TabIndex = 35;
             this.lblTipoPersona.Text = "Tipo persona";
             // 
-            // dtpFechaNac
+            // lblLegajo
             // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(148, 88);
-            this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(175, 22);
-            this.dtpFechaNac.TabIndex = 36;
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.Location = new System.Drawing.Point(3, 171);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(51, 17);
+            this.lblLegajo.TabIndex = 21;
+            this.lblLegajo.Text = "Legajo";
+            // 
+            // txtLegajo
+            // 
+            this.txtLegajo.Location = new System.Drawing.Point(148, 174);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.Size = new System.Drawing.Size(165, 22);
+            this.txtLegajo.TabIndex = 25;
+            // 
+            // lblFechaNac
+            // 
+            this.lblFechaNac.AutoSize = true;
+            this.lblFechaNac.Location = new System.Drawing.Point(3, 85);
+            this.lblFechaNac.Name = "lblFechaNac";
+            this.lblFechaNac.Size = new System.Drawing.Size(139, 17);
+            this.lblFechaNac.TabIndex = 23;
+            this.lblFechaNac.Text = "Fecha de nacimiento";
+            // 
+            // lblIdPlan
+            // 
+            this.lblIdPlan.AutoSize = true;
+            this.lblIdPlan.Location = new System.Drawing.Point(3, 141);
+            this.lblIdPlan.Name = "lblIdPlan";
+            this.lblIdPlan.Size = new System.Drawing.Size(36, 17);
+            this.lblIdPlan.TabIndex = 24;
+            this.lblIdPlan.Text = "Plan";
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(148, 88);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(165, 22);
+            this.dtpFechaNacimiento.TabIndex = 36;
+            // 
+            // cmbTiposPersona
+            // 
+            this.cmbTiposPersona.FormattingEnabled = true;
+            this.cmbTiposPersona.Location = new System.Drawing.Point(445, 144);
+            this.cmbTiposPersona.Name = "cmbTiposPersona";
+            this.cmbTiposPersona.Size = new System.Drawing.Size(166, 24);
+            this.cmbTiposPersona.TabIndex = 37;
+            // 
+            // cmbPlanes
+            // 
+            this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Location = new System.Drawing.Point(148, 144);
+            this.cmbPlanes.Name = "cmbPlanes";
+            this.cmbPlanes.Size = new System.Drawing.Size(165, 24);
+            this.cmbPlanes.TabIndex = 38;
             // 
             // UsuarioDesktop
             // 
@@ -420,13 +422,13 @@
         private System.Windows.Forms.Label lblLegajo;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Label lblIdPlan;
-        private System.Windows.Forms.TextBox txtIdPlan;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtTipoPersona;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblTipoPersona;
-        private System.Windows.Forms.DateTimePicker dtpFechaNac;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.ComboBox cmbTiposPersona;
+        private System.Windows.Forms.ComboBox cmbPlanes;
     }
 }

@@ -9,70 +9,69 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
-using Util;
 
 namespace UI.Desktop
 {
-    public partial class CursoDesktop : ApplicationForm
+    public partial class ModuloUsuarioDesktop : ApplicationForm
     {
-        public CursoDesktop()
+        private ModuloUsuario _moduloUsuarioActual;
+        public ModuloUsuario ModuloUsuarioActual
+        {
+            get { return _moduloUsuarioActual; }
+            set { _moduloUsuarioActual = value; }
+        }
+        public ModuloUsuarioDesktop()
         {
             InitializeComponent();
         }
-         public CursoDesktop(ModoForm modo):this () 
-        //este constructor servirá para las altas
+        public ModuloUsuarioDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
         }
-        public CursoDesktop(int id, ModoForm modo):this()
+        public ModuloUsuarioDesktop(int id, ModoForm modo):this()
         {
             this.Modo = modo;
             try
             {
-                CursoLogic cursoLogic = new CursoLogic();
-                this.CursoActual = cursoLogic.GetOne(id);
-                this.MapearDeDatos();
+                ModuloUsuarioLogic modUsuLogic = new ModuloUsuarioLogic();
+                this.ModuloUsuarioActual = modUsuLogic.GetOne(id);
+                this.MapearDeDatos(); 
             }
             catch (Exception e)
             {
-                this.Notificar(e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-        }
-        private Curso _cursoActual;
-        public Curso CursoActual
-        {
-            get { return _cursoActual; }
-            set { _cursoActual = value; }
         }
         public override void MapearDeDatos()
         {
-            this.txtIdCurso.Text = this.CursoActual.Id.ToString();
-            this.txtIdMateria.Text = this.CursoActual.IdMateria.ToString();
-            this.txtIdComision.Text = this.CursoActual.IdComision.ToString();
-            this.txtCupo.Text = this.CursoActual.Cupo.ToString();
-            this.txtAnio.Text = this.CursoActual.AnioCalendario.ToString();
+            this.txtId.Text = this.ModuloUsuarioActual.Id.ToString();
+            this.txtIdModulo.Text = this.ModuloUsuarioActual.IdModulo.ToString();
+            this.txtIdUsuario.Text = this.ModuloUsuarioActual.IdUsuario.ToString();
+            this.chkAlta.Checked = this.ModuloUsuarioActual.PermiteAlta;
+            this.chkBaja.Checked = this.ModuloUsuarioActual.PermiteBaja;
+            this.chkModificacion.Checked = this.ModuloUsuarioActual.PermiteModificacion;
+            this.chkConsulta.Checked = this.ModuloUsuarioActual.PermiteConsulta;
 
             //seteo del texto del botón Aceptar según Modo del formulario
             switch (this.Modo)
             {
                 case ModoForm.Alta:
-                    this.Text = "Alta de Curso";
+                    this.Text = "Alta de Módulo Usuario";
                     this.btnAceptar.Text = "Guardar";
                     break;
 
                 case ModoForm.Modificacion:
-                    this.Text = "Modificación de Curso";
+                    this.Text = "Modificación de Módulo Usuario";
                     this.btnAceptar.Text = "Guardar";
                     break;
 
                 case ModoForm.Baja:
-                    this.Text = "Baja de Curso";
+                    this.Text = "Baja de Módulo Usuario";
                     this.btnAceptar.Text = "Eliminar";
                     break;
 
                 case ModoForm.Consulta:
-                    this.Text = "Consulta de Curso";
+                    this.Text = "Consulta de Módulo Usuario";
                     this.btnAceptar.Text = "Aceptar";
                     break;
             }
@@ -81,49 +80,51 @@ namespace UI.Desktop
         {
             if (this.Modo == ModoForm.Alta)
             {
-                CursoActual = new Curso();
+                ModuloUsuarioActual = new ModuloUsuario();
             }
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
                 if (this.Modo == ModoForm.Modificacion)
                 {
-                    CursoActual.Id = Convert.ToInt16(this.txtIdCurso.Text);
+                    ModuloUsuarioActual.Id = Convert.ToInt16(this.txtId.Text);
                 }
-                CursoActual.IdMateria = Convert.ToInt32(this.txtIdMateria.Text.Trim());
-                CursoActual.IdComision = Convert.ToInt32(this.txtIdComision.Text.Trim());
-                CursoActual.Cupo = Convert.ToInt32(this.txtCupo.Text.Trim());
-                CursoActual.AnioCalendario = Convert.ToInt32(this.txtAnio.Text.Trim());
+                ModuloUsuarioActual.IdModulo = Convert.ToInt32(this.txtIdModulo.Text.Trim());
+                ModuloUsuarioActual.IdUsuario = Convert.ToInt32(this.txtIdUsuario.Text.Trim());
+                ModuloUsuarioActual.PermiteAlta = this.chkAlta.Checked;
+                ModuloUsuarioActual.PermiteBaja = this.chkBaja.Checked;
+                ModuloUsuarioActual.PermiteModificacion = this.chkModificacion.Checked;
+                ModuloUsuarioActual.PermiteConsulta = this.chkConsulta.Checked;
             }
             switch (this.Modo)
             {
                 case ModoForm.Alta:
-                    CursoActual.State = BusinessEntity.States.New;
+                    ModuloUsuarioActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
-                    CursoActual.State = BusinessEntity.States.Modified;
+                    ModuloUsuarioActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
-                    CursoActual.State = BusinessEntity.States.Deleted;
+                    ModuloUsuarioActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
-                    CursoActual.State = BusinessEntity.States.Unmodified;
+                    ModuloUsuarioActual.State = BusinessEntity.States.Unmodified;
                     break;
             }
         }
         public override void GuardarCambios()
         {
-            CursoLogic cursoLogic = new CursoLogic();
+            ModuloUsuarioLogic modUsuLogic = new ModuloUsuarioLogic();
             if (this.Modo == ModoForm.Alta)
             {
-                Curso cursoNuevo = new Curso();
-                this.CursoActual = cursoNuevo;
+                ModuloUsuario modUsuNuevo = new ModuloUsuario();
+                this.ModuloUsuarioActual = modUsuNuevo;
             }
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
                 try
                 {
                     this.MapearADatos();
-                    cursoLogic.Save(this.CursoActual);
+                    modUsuLogic.Save(this.ModuloUsuarioActual);
                 }
                 catch (Exception e)
                 {
@@ -134,7 +135,7 @@ namespace UI.Desktop
             {
                 try
                 {
-                    cursoLogic.Delete(CursoActual.Id);
+                    modUsuLogic.Delete(ModuloUsuarioActual.Id);
                 }
                 catch (Exception e)
                 {
@@ -143,27 +144,18 @@ namespace UI.Desktop
             }
         }
         public override bool Validar()
-        /* método que devuelva si los datos son válidos para poder
-        registrar los cambios realizados.*/
         {
             string mensaje = "";
+           
+            if (String.IsNullOrEmpty(this.txtIdModulo.Text.Trim()))
+            {
+                mensaje += "- Complete el campo Id Módulo.\n";
+            }
+            if (String.IsNullOrEmpty(this.txtIdUsuario.Text.Trim()))
+            {
+                mensaje += "- Complete el campo Id Usuario.\n";
+            }
 
-            if (String.IsNullOrEmpty(this.txtIdComision.Text.Trim()))
-            {
-                mensaje += "- Complete el campo Comisión.\n";
-            } 
-            if (String.IsNullOrEmpty(this.txtIdMateria.Text.Trim()))
-            {
-                mensaje += "- Complete el campo Materia.\n";
-            }
-            if (String.IsNullOrEmpty(this.txtCupo.Text.Trim()))
-            {
-                mensaje += "- Complete el campo Cupo.\n";
-            }
-            if (String.IsNullOrEmpty(this.txtAnio.Text.Trim()))
-            {
-                mensaje += "- Complete el campo Año.\n";
-            }
             if (mensaje.Length == 0)
             {
                 return true;
@@ -174,12 +166,10 @@ namespace UI.Desktop
                 return false;
             }
         }
-
         public override void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             MessageBox.Show(mensaje, titulo, botones, icono);
         }
-
         public override void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             this.Notificar(this.Text, mensaje, botones, icono);
@@ -195,6 +185,5 @@ namespace UI.Desktop
         {
             this.Close();
         }
-
     }
 }

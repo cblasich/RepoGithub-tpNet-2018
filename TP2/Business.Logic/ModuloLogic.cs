@@ -21,22 +21,18 @@ namespace Business.Logic
         {
             ModuloData = new ModuloAdapter();
         }
-
-        public Modulo GetOne(int id)
-        {
-            return ModuloData.GetOne(id);
-        }
-
         public List<Modulo> GetAll()
         {
             return ModuloData.GetAll();
         }
-
+        public Modulo GetOne(int id)
+        {
+            return ModuloData.GetOne(id);
+        }
         public void Save(Modulo modulo)
         {
             ModuloData.Save(modulo);
         }
-
         public void Delete(int id)
         {
             ModuloData.Delete(id);
