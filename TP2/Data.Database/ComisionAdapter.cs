@@ -138,10 +138,10 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialidad, id_plan = @id_plan " +
-                "WHERE id_comision = @id", SqlConn);
+                "WHERE id_comision = @id_comision", SqlConn);
 
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = comision.Id;
+                cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = comision.Id;
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.DescComision;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IdPlan;
