@@ -50,8 +50,9 @@ namespace UI.Desktop
             {
                 //Recupero la comision
                 this.ComisionActual = comisionLogic.GetOne(id);
-                this.MapearDeDatos();
                 this.CargarCombo();
+                this.MapearDeDatos();
+                
                                
             }
 
@@ -107,6 +108,7 @@ namespace UI.Desktop
             this.txtId.Text = this.ComisionActual.Id.ToString();
             this.txtDescripcion.Text = this.ComisionActual.DescComision.ToString();
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
+            this.cbxPlan.SelectedValue = this.ComisionActual.IdPlan; //Para que en el combo muestre la info que se tenia antes
         }
             
         public override void GuardarCambios()
