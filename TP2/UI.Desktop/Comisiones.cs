@@ -58,5 +58,17 @@ namespace UI.Desktop
                 this.Listar();
             }
         }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvComisiones.SelectedRows.Count == 1)
+            {
+                int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+                ComisionDesktop formComision = new ComisionDesktop(ID, ApplicationForm.ModoForm.Baja);
+                formComision.ShowDialog();
+                this.Listar();
+            }
+
+        }
     }
 }

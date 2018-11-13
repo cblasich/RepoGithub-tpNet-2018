@@ -44,12 +44,15 @@ namespace UI.Desktop
         {
             this.Modo = modo;
             ComisionLogic comisionLogic = new ComisionLogic();
+            this.CambiarBotones();
 
             try
             {
-                //Recupero la materia
+                //Recupero la comision
                 this.ComisionActual = comisionLogic.GetOne(id);
-                //this.MapearDeDatos();
+                this.CargarCombo();
+                this.MapearDeDatos();
+                
                                
             }
 
@@ -72,8 +75,42 @@ namespace UI.Desktop
                 ComisionActual.IdPlan = (int)this.cbxPlan.SelectedValue;
 
             }
+
+            else if (this.Modo == ModoForm.Modificacion)
+            {
+                ComisionActual.Id = Convert.ToInt16(this.txtId.Text);
+                ComisionActual.State = BusinessEntity.States.Modified;
+                ComisionActual.DescComision = this.txtDescripcion.Text.Trim();
+                ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnioEspecialidad.Text.Trim());
+                ComisionActual.IdPlan = (int)this.cbxPlan.SelectedValue;
+            }
+
+            switch (this.Modo)
+            {
+                case ModoForm.Alta:
+                    ComisionActual.State = BusinessEntity.States.New;
+                    break;
+                case ModoForm.Modificacion:
+                    ComisionActual.State = BusinessEntity.States.Modified;
+                    break;
+                case ModoForm.Baja:
+                    ComisionActual.State = BusinessEntity.States.Deleted;
+                    break;
+                case ModoForm.Consulta:
+                    ComisionActual.State = BusinessEntity.States.Unmodified;
+                    break;
+            }
         }
 
+        public override void MapearDeDatos()
+        {
+
+            this.txtId.Text = this.ComisionActual.Id.ToString();
+            this.txtDescripcion.Text = this.ComisionActual.DescComision.ToString();
+            this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
+            this.cbxPlan.SelectedValue = this.ComisionActual.IdPlan; //Para que en el combo muestre la info que se tenia antes
+        }
+            
         public override void GuardarCambios()
         /* método que se encargará de invocar al método correspondiente 
         de la capa de negocio según sea el ModoForm en que se encuentre el formulario*/
@@ -84,10 +121,22 @@ namespace UI.Desktop
             {
                 try
                 {
-                    //Copio datos del formulario al usuario
+                    //Copio datos del formulario a la comision
                     this.MapearADatos();
-                    //Guardo el usuario y la persona
+                    //Guardo comision
                     comLogic.Save(this.ComisionActual);
+                }
+                catch (Exception e)
+                {
+                    this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            else if (this.Modo == ModoForm.Baja)
+            {
+                try
+                {
+                    comLogic.Delete(ComisionActual.Id);
                 }
                 catch (Exception e)
                 {
@@ -119,6 +168,9 @@ namespace UI.Desktop
                 case ModoForm.Baja:
                     this.Text = "Baja de Comision";
                     this.btnAceptar.Text = "Eliminar";
+                    this.txtDescripcion.Enabled = false;
+                    this.txtAnioEspecialidad.Enabled = false;
+                    this.cbxPlan.Enabled = false;
                     break;
 
                 case ModoForm.Consulta:
