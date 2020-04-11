@@ -74,7 +74,6 @@ namespace UI.Desktop
                 PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
                 formPersona.ShowDialog();
             }
-
             this.Listar();
         }
 

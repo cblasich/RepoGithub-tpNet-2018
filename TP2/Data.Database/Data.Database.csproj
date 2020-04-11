@@ -48,6 +48,7 @@
     <Compile Include="ComisionAdapter.cs" />
     <Compile Include="CursoAdapter.cs" />
     <Compile Include="EspecialidadAdapter.cs" />
+    <Compile Include="MateriaAdapter.cs" />
     <Compile Include="ModuloAdapter.cs" />
     <Compile Include="ModuloUsuarioAdapter.cs" />
     <Compile Include="PersonaAdapter.cs" />

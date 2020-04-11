@@ -1,0 +1,9 @@
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Release\Data.Database.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Release\Data.Database.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Release\Business.Entities.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Release\Util.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Release\Business.Entities.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\bin\Release\Util.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\obj\Release\Data.Database.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\obj\Release\Data.Database.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Data.Database\obj\Release\Data.Database.pdb

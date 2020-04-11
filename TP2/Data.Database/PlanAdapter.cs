@@ -21,9 +21,7 @@ namespace Data.Database
                 this.OpenConnection();
 
                 /* Creamos un objeto SqlCommand que sera la sentencia SQL
-                 que vamos a ejecutar contra la base de datos
-                 (los datos de la BD usuario, contraseña, servidor, etc.
-                 estan en el connection string */
+                 que vamos a ejecutar contra la base de datos */
 
                 SqlCommand cmdPlanes = new SqlCommand("select * from planes", SqlConn);
 
@@ -31,12 +29,12 @@ namespace Data.Database
                  el que recuperara los datos de la BD */
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
 
-                /* Read() lee una fila de las devueltas por el comando sql, carga los datos en drUsuarios para poder accederlos,
+                /* Read() lee una fila de las devueltas por el comando sql, carga los datos en drPlanes para poder accederlos,
                  devuelve verdadero mientras haya podido leer datos y avanza a la fila siguiente para el proximo read. */
 
                 while (drPlanes.Read()) 
                 {
-                    /* Creamos un objeto Usuario de la capa de entidades para copiar
+                    /* Creamos un objeto Plan de la capa de entidades para copiar
                      los datos de la fila del DataReader al objeto de entidades.*/
                     Plan plan = new Plan();
                     if ((int)drPlanes["id_plan"] > 0)
@@ -72,6 +70,121 @@ namespace Data.Database
             return planes;
         }
 
+        public Plan GetOne(int ID)
+        {
+            Plan plan = new Plan();
+
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPlanes = new SqlCommand("select * from planes where id_plan = @id", SqlConn);
+                cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
+                if (drPlanes.Read())
+                {
+                    plan.Id = (int)drPlanes["id_plan"];
+                    plan.DescPlan = (string)drPlanes["desc_plan"];
+                    plan.IdEspecialidad = (int)drPlanes["id_especialidad"];
+                }
+                drPlanes.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al intentar recuperar datos del plan.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return plan;
+        }
+
+        public void Delete(int idPlan)
+        {
+            try
+            {
+                this.OpenConnection();
+                //Creamos la sentencia SQL y asignamos un valor al parametro
+                SqlCommand cmdDeletePlan = new SqlCommand("delete planes where id_plan=@idPlan", SqlConn);
+                cmdDeletePlan.Parameters.Add("@idPlan", SqlDbType.Int).Value = idPlan;
+                //Ejecutamos la sentencia SQL
+                cmdDeletePlan.ExecuteNonQuery();
+            }
+            catch (SqlException SqlEx)
+            {
+                Exception ExcepcionSqlManejada = new Exception("Plan tiene Comisiones asociadas. Debe eliminarlas antes de eliminar el plan.",SqlEx);
+                throw ExcepcionSqlManejada;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al eliminar plan.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        public void Save(Plan plan)
+        {
+            if (plan.State == BusinessEntity.States.New)
+            {
+                this.Insert(plan);
+            }
+            else if (plan.State == BusinessEntity.States.Modified)
+            {
+                this.Update(plan);
+            }
+            plan.State = BusinessEntity.States.Unmodified;
+        }
+        protected void Insert(Plan plan)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO planes(desc_plan, id_especialidad) " +
+                "VALUES(@desc_plan, @id_especialidad) " +
+                "select @@identity",   //linea para recuperar el ID que asigno el Sql automaticamente
+                SqlConn);
+
+                cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.DescPlan;
+                cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IdEspecialidad;
+                plan.Id = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar()); //Asi se obtiene el ID que asigno la BD automaticamente
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al intentar crear plan.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        protected void Update(Plan plan)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("UPDATE planes SET desc_plan = @desc_plan, id_especialidad = @id_especialidad " +
+                "WHERE id_plan = @id", SqlConn);
+
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = plan.Id;
+                cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.DescPlan;
+                cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IdEspecialidad;
+                cmdSave.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al intentar modificar datos del plan.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
         public DataTable GetAllDT()
         {
             this.OpenConnection();
@@ -80,8 +193,7 @@ namespace Data.Database
             SqlDataAdapter daPlanes = new SqlDataAdapter(cmdPlanes);
             daPlanes.Fill(dtPlanes);
             return dtPlanes;
-        }
-
+        }   
         public List<Plan> GetPlanesPorIdEspecialidad(int idEspec)
         {
             List<Plan> planes = new List<Plan>();
@@ -112,116 +224,5 @@ namespace Data.Database
             }
             return planes;
         }
-       
-
-        //public void Delete(int idPersona, int idUsuario)
-        //{
-        //    try
-        //    {
-        //        //Abrimos conexion
-        //        this.OpenConnection();
-
-        //        //Creamos la sentencia SQL y asignamos un valor al parametro
-        //        SqlCommand cmdDelete1 = new SqlCommand("IF EXISTS(SELECT * FROM usuarios WHERE id_usuario=@idUsu) DELETE FROM usuarios WHERE id_usuario=@idUsu", SqlConn);
-        //        cmdDelete1.Parameters.Add("@idUsu", SqlDbType.Int).Value = idUsuario;
-        //        SqlCommand cmdDelete2 = new SqlCommand("IF EXISTS(SELECT * FROM modulos_usuarios WHERE id_usuario=@idUsu) DELETE FROM modulos_usuarios WHERE id_usuario=@idUsu", SqlConn);
-        //        cmdDelete2.Parameters.Add("@idUsu", SqlDbType.Int).Value = idUsuario;
-        //        SqlCommand cmdDelete3 = new SqlCommand("DELETE personas where id_persona=@idPer", SqlConn);
-        //        cmdDelete3.Parameters.Add("@idPer", SqlDbType.Int).Value = idPersona;
-
-
-
-        //        //Ejecutamos la sentencia SQL
-        //        cmdDelete1.ExecuteNonQuery();
-        //        cmdDelete2.ExecuteNonQuery();
-        //        cmdDelete3.ExecuteNonQuery();
-        //    }
-        //    catch (Exception Ex)
-        //    {
-        //        Exception ExcepcionManejada = new Exception("Error al eliminar persona.", Ex);
-        //        throw ExcepcionManejada;
-        //    }
-        //    finally
-        //    {
-        //        this.CloseConnection();
-        //    }
-        //}
-
-
-        //protected void Update(Persona persona)
-        //{
-        //    try
-        //    {
-        //        this.OpenConnection();
-        //        SqlCommand cmdUpdate = new SqlCommand("UPDATE personas SET nombre = @nombre, apellido = @apellido, direccion = @direccion, " +
-        //        "email = @email, telefono = @telefono, fecha_nac = @fecha_nac, legajo = @legajo, " +
-        //        "tipo_persona = @tipo_persona WHERE id_persona = @id", SqlConn);
-
-        //        cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = persona.Id;
-        //        cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
-        //        cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
-        //        cmdUpdate.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
-        //        cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
-        //        cmdUpdate.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-        //        cmdUpdate.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 10).Value = persona.FechaNac;
-        //        cmdUpdate.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-        //        cmdUpdate.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)persona.TipoPersona;
-        //        cmdUpdate.ExecuteNonQuery();
-        //    }
-        //    catch (Exception Ex)
-        //    {
-        //        Exception ExcepcionManejada = new Exception("Error al modificar datos de la persona.", Ex);
-        //        throw ExcepcionManejada;
-        //    }
-        //    finally
-        //    {
-        //        this.CloseConnection();
-        //    }
-        //}
-        //protected void Insert(Persona persona)
-        //{
-        //    try
-        //    {
-        //        this.OpenConnection();
-        //        SqlCommand cmdInsert = new SqlCommand("INSERT INTO personas(nombre, apellido, direccion, email, telefono, fecha_nac, legajo, tipo_persona, id_plan) " +
-        //        "VALUES(@nombre, @apellido, @direccion, @email, @telefono, @fecha_nac, @legajo, @tipo_persona, @id_plan) " +
-        //        "SELECT @@identity AS id_persona", //linea para recuperar el ID que asigno el Sql automaticamente
-        //        SqlConn);
-
-        //        cmdInsert.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
-        //        cmdInsert.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
-        //        cmdInsert.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
-        //        cmdInsert.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
-        //        cmdInsert.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-        //        cmdInsert.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 10).Value = persona.FechaNac;
-        //        cmdInsert.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-        //        cmdInsert.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)persona.TipoPersona;
-        //        cmdInsert.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
-
-        //        persona.Id = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar()); //Asi se obtiene el ID que asigno la BD automaticamente.
-
-        //    }
-        //    catch (Exception Ex)
-        //    {
-        //        Exception ExcepcionManejada = new Exception("Error al crear persona.", Ex);
-        //        throw ExcepcionManejada;
-        //    }
-        //    finally
-        //    {
-        //        this.CloseConnection();
-        //    }
-        //}
-        //public void Save(Plan plan)
-        //{
-        //    if (plan.State == BusinessEntity.States.New)
-        //    {
-        //        this.Insert(plan);
-        //    }
-        //    else if (plan.State == BusinessEntity.States.Modified)
-        //    {
-        //        this.Update(plan);
-        //    }
-        //    plan.State = BusinessEntity.States.Unmodified;
-        //}
     }
 }

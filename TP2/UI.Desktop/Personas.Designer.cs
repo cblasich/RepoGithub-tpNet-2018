@@ -110,9 +110,11 @@
             this.tlPersonas.SetColumnSpan(this.dgvPersonas, 2);
             this.dgvPersonas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPersonas.Location = new System.Drawing.Point(3, 3);
+            this.dgvPersonas.MultiSelect = false;
             this.dgvPersonas.Name = "dgvPersonas";
             this.dgvPersonas.ReadOnly = true;
             this.dgvPersonas.RowTemplate.Height = 24;
+            this.dgvPersonas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonas.Size = new System.Drawing.Size(1078, 241);
             this.dgvPersonas.TabIndex = 0;
             // 
@@ -217,7 +219,7 @@
             this.tsbEliminar});
             this.tsPersonas.Location = new System.Drawing.Point(3, 0);
             this.tsPersonas.Name = "tsPersonas";
-            this.tsPersonas.Size = new System.Drawing.Size(123, 27);
+            this.tsPersonas.Size = new System.Drawing.Size(84, 27);
             this.tsPersonas.TabIndex = 0;
             // 
             // tsbNuevo

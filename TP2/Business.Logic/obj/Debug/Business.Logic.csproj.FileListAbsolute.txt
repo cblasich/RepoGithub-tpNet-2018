@@ -120,3 +120,14 @@ D:\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Util.pdb
 D:\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
 D:\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Debug\Business.Logic.dll
 D:\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Util.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Debug\Util.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Debug\Business.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Debug\Business.Logic.pdb

@@ -1,0 +1,11 @@
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Business.Logic.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Business.Logic.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Business.Entities.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Data.Database.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Util.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Business.Entities.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Data.Database.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\bin\Release\Util.pdb
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Release\Business.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Release\Business.Logic.dll
+C:\Users\Caro\Documents\GitHub\RepoGithub-tpNet-2018\TP2\Business.Logic\obj\Release\Business.Logic.pdb

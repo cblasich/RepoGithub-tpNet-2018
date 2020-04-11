@@ -75,7 +75,6 @@ namespace UI.Desktop
                 ComisionActual.IdPlan = (int)this.cbxPlan.SelectedValue;
 
             }
-
             else if (this.Modo == ModoForm.Modificacion)
             {
                 ComisionActual.Id = Convert.ToInt16(this.txtId.Text);
@@ -131,7 +130,6 @@ namespace UI.Desktop
                     this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
             else if (this.Modo == ModoForm.Baja)
             {
                 try
