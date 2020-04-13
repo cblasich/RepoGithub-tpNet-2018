@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using Business.Entities;
 
 namespace Data.Database
-{
+{//redo pull request
     public class PlanAdapter : Adapter
     {
         public List<Plan> GetAll()

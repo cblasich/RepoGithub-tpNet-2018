@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 namespace Data.Database
-{
+{//redo pull request
     public class Adapter
     {
         //Clave1 por defecto a utlizar para la cadena de conexion

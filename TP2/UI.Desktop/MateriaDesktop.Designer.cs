@@ -1,5 +1,5 @@
 ﻿namespace UI.Desktop
-{
+{//redo pull request
     partial class MateriaDesktop
     {
         /// <summary>
@@ -212,4 +212,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }
+
+    //redo pull request
 }
