@@ -1,0 +1,11 @@
+TP2/Business.Entities/bin/*
+TP2/Business.Entities/obj/*
+TP2/Business.Logic/obj/*
+TP2/Data.Database/bin/*
+TP2/Data.Database/obj/*
+TP2/UI.Consola/obj/*
+TP2/UI.Desktop/bin/*
+TP2/UI.Desktop/obj/*
+TP2/Util/obj/*
+TP2/Util/bin/*
+TP2/TP2.v12.suo
